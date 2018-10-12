@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from "react";
+import Messages from "./pages/Messasges";
+// import Nav from "./components/Nav";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header>Hello World.</header>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div>
+    <Messages />
+  </div>
+);
 
 export default App;
+
