@@ -6,7 +6,11 @@ import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class Messages extends Component {
   state = {
-    books: []
+    books: [],
+    sender: "",
+    email: "",
+    subject: "",
+    synopsis: ""
   };
 
   // componentDidMount() {
@@ -19,6 +23,14 @@ class Messages extends Component {
   //     .catch(err => console.log(err));
   // };
 
+  // Handles updating component state when the user types into the input field
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
   render() {
     return (
       <Container fluid>
@@ -28,10 +40,26 @@ class Messages extends Component {
               <h1>Send a Message</h1>
             </Jumbotron>
             <form>
-              <Input name="sender" placeholder="Your name (required)" />
-              <Input name="email" placeholder="Your email (required)" />
-              <Input name="subject" placeholder="Email subject (required)" />
-              <TextArea name="body" placeholder="Type your message here..." />
+              <Input 
+              value={this.state.sender}
+              onChange={this.handleInputChange}
+              name="sender" 
+              placeholder="Your name (required)" />
+              <Input 
+              value={this.state.email}
+              onChange={this.handleInputChange}
+              name="email" 
+              placeholder="Your email (required)" />
+              <Input 
+              value={this.state.subject}
+              onChange={this.handleInputChange}
+              name="subject" 
+              placeholder="Email subject (required)" />
+              <TextArea 
+              value={this.state.body}
+              onChange={this.handleInputChange}
+              name="body" 
+              placeholder="Type your message here..." />
               <FormBtn>Send Message</FormBtn>
             </form>
           </Col>
