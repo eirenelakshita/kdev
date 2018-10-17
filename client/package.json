@@ -2,6 +2,7 @@
   "name": "kdev",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "moment": "^2.22.2",
     "react": "^16.5.2",
