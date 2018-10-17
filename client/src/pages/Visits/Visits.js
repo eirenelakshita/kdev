@@ -6,7 +6,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
-class Books extends Component {
+class Visits extends Component {
   // Setting our component's initial state
   state = {
     visits: [],
@@ -19,11 +19,11 @@ class Books extends Component {
 
   // When the component mounts, load all visits and save them to this.state.visits
   componentDidMount() {
-    this.loadBooks();
+    this.loadVisits();
   }
 
   // Loads all visits  and sets them to this.state.visits
-  loadBooks = () => {
+  loadVisits = () => {
     API.getBooks()
       .then(res =>
         this.setState({ visits: res.data, Doctor_Speciality: "", Prescription: "", Diagnosis: "" })
@@ -32,9 +32,9 @@ class Books extends Component {
   };
 
   // Deletes a visit from the database with a given id, then reloads visits from the db
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
+  deleteVisit = id => {
+    API.deleteVisit(id)
+      .then(res => this.loadVisits())
       .catch(err => console.log(err));
   };
 
@@ -56,7 +56,7 @@ class Books extends Component {
   //       Prescription: this.state.Prescription,
   //       Diagnosis: this.state.Diagnosis
   //     })
-  //       .then(res => this.loadBooks())
+  //       .then(res => this.loadVisits())
   //       .catch(err => console.log(err));
   //   }
   // };
@@ -79,7 +79,7 @@ class Books extends Component {
                           {visit.Doctor_Speciality} by {visit.Prescription}
                         </strong>
                       </a>
-                      <DeleteBtn onClick={() => this.deleteBook(visit._id)} />
+                      <DeleteBtn onClick={() => this.deleteVisit(visit._id)} />
                     </ListItem>
                   );
                 })}
@@ -94,4 +94,4 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default Visits;
