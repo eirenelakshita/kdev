@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
-// import API from "../../utils/API";
+import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, TextArea, FormBtn } from "../../components/Form";
-const nodemailer = require("nodemailer");
+import axios from 'axios';
+// import nodemailer from "nodemailer";
+//const nodemailer = require("nodemailer");
 
 class Messages extends Component {
   state = {
@@ -34,33 +36,20 @@ class Messages extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.sender && this.state.email) {
-
-      //////////////////////NODEMAILER//////////////////
-      var transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user: 'kdev.spring2018@gmail.com',
-          pass: 'gtatl20180508fsf'
+        console.log("Button clicked!");
+        // axios.post('/api/messages', {}).then(console.log).catch(console.log);
+        if (this.state.sender && this.state.email) {
+          API.postMessage(
+          //   {
+          //   title: this.state.sender,
+          //   author: this.state.email,
+          //   subject: this.state.subject,
+          //   body: this.state.body
+          // }
+          )
+            .then(res => console.log(res))
+            .catch(err => console.log(err));
         }
-      });
-
-      var mailOptions = {
-        from: 'kdev.spring2018@gmail.com',
-        to: 'laeirene59@gmail.com',
-        subject: 'Sending Email using Node.js',
-        text: 'That was easy!'
-      };
-
-      transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-      });
-      //////////////////////NODEMAILER//////////////////
-    }
   };
 
 
@@ -94,7 +83,7 @@ class Messages extends Component {
                 name="body"
                 placeholder="Type your message here..." />
               <FormBtn
-                disabled={!(this.state.author && this.state.title)}
+                // disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
                 Send Message
