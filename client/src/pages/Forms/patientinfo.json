@@ -1,10 +1,10 @@
 {
   "rows": [
     {"cols": [
-      { "size": "md-5", "fieldName": "Last Name" },
-      { "size": "md-1", "fieldName": "Middle Initial" },
-      { "size": "md-5", "fieldName": "First Name" },
-      { "size": "md-1", "fieldName": "Suffix/Prefix" }
+      { "size": "md-4", "fieldName": "Last Name" },
+      { "size": "md-2", "fieldName": "Middle Initial" },
+      { "size": "md-4", "fieldName": "First Name" },
+      { "size": "md-2", "fieldName": "Suffix/Prefix" }
     ]},
     {"cols": [
       { "size": "md-6", "fieldName": "Date of Birth", "format": "MM/DD/YYYY" },
@@ -20,13 +20,13 @@
       { "size": "md-4", "fieldName": "Zip Code" }
     ]},
     {"cols": [
-      { "size": "md-6", "fieldName": "Phone Number", "format": "xxx-xxx-xxxx" }
+      { "size": "md-8", "fieldName": "Phone Number", "format": "xxx-xxx-xxxx" },
+      { "size": "md-4", "fieldName": "Marital Status" }
     ]},
     {"cols": [
-      { "size": "md-4", "fieldName": "Race" },
-      { "size": "md-4", "fieldName": "Ethnicity" },
-      { "size": "md-2", "fieldName": "Sex" },
-      { "size": "md-2", "fieldName": "Marital Status" }
+      { "size": "md-5", "fieldName": "Race" },
+      { "size": "md-5", "fieldName": "Ethnicity" },
+      { "size": "md-2", "fieldName": "Sex" }
     ]},
     {"cols": [
       { "size": "md-6", "fieldName": "Emergency Contact Name" },

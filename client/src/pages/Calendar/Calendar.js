@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import moment from "moment";
-import { Container, Row, Col } from "../components/Grid";
+import { Container, Row, Col } from "../../components/Grid";
 
 class Calendar extends PureComponent {
   state = {
