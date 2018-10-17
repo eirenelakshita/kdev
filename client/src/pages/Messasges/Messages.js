@@ -40,12 +40,12 @@ class Messages extends Component {
         // axios.post('/api/messages', {}).then(console.log).catch(console.log);
         if (this.state.sender && this.state.email) {
           API.postMessage(
-          //   {
-          //   title: this.state.sender,
-          //   author: this.state.email,
-          //   subject: this.state.subject,
-          //   body: this.state.body
-          // }
+            {
+            sender: this.state.sender,
+            email: this.state.email,
+            subject: this.state.subject,
+            body: this.state.body
+          }
           )
             .then(res => console.log(res))
             .catch(err => console.log(err));
