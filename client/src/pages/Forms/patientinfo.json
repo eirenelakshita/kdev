@@ -1,0 +1,36 @@
+{
+  "rows": [
+    {"cols": [
+      { "size": "md-4", "fieldName": "Last Name" },
+      { "size": "md-2", "fieldName": "Middle Initial" },
+      { "size": "md-4", "fieldName": "First Name" },
+      { "size": "md-2", "fieldName": "Suffix/Prefix" }
+    ]},
+    {"cols": [
+      { "size": "md-6", "fieldName": "Date of Birth", "format": "MM/DD/YYYY" },
+      { "size": "md-6", "fieldName": "Social Security Number", "format": "xxx-xx-xxxx" }
+    ]},
+    {"cols": [
+      { "size": "md-6", "fieldName": "Street Address" },
+      { "size": "md-6", "fieldName": "Address Line 2" }
+    ]},
+    {"cols": [
+      { "size": "md-6", "fieldName": "City" },
+      { "size": "md-2", "fieldName": "State", "format": "XX" },
+      { "size": "md-4", "fieldName": "Zip Code" }
+    ]},
+    {"cols": [
+      { "size": "md-8", "fieldName": "Phone Number", "format": "xxx-xxx-xxxx" },
+      { "size": "md-4", "fieldName": "Marital Status" }
+    ]},
+    {"cols": [
+      { "size": "md-5", "fieldName": "Race" },
+      { "size": "md-5", "fieldName": "Ethnicity" },
+      { "size": "md-2", "fieldName": "Sex" }
+    ]},
+    {"cols": [
+      { "size": "md-6", "fieldName": "Emergency Contact Name" },
+      { "size": "md-6", "fieldName": "Emergency Contact Phone Number" }
+    ]}
+  ]
+}
