@@ -30,8 +30,12 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "dns": "^0.2.2",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
-    "mongoose": "^5.0.17"
+    "mongoose": "^5.0.17",
+    "net": "^1.0.2",
+    "nodemailer": "^4.6.8",
+    "router-express": "^1.5.2"
   }
 }
