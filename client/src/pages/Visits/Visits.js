@@ -24,7 +24,7 @@ class Visits extends Component {
 
   // Loads all visits  and sets them to this.state.visits
   loadVisits = () => {
-    API.getBooks()
+    API.getVisits()
       .then(res =>
         this.setState({ visits: res.data, Doctor_Speciality: "", Prescription: "", Diagnosis: "" })
       )
