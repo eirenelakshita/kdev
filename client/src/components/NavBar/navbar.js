@@ -15,24 +15,25 @@ const navbar = () => (
     <div className="row">
       <div className="col-sm-4 right" style={{backgroundColor:"clear"}}>
             <a href="#" className="button">Link Button</a></div>
-      <div className="col-sm-4" style={{backgroundColor:"clear"}}>
+      <div className="col-sm-4" style={{backgroundColor:"clear"}}></div>
       
       <div className="col-sm-4 left" style={{backgroundColor:"clear"}}>
             <a href="#" className="button">Link Button</a></div>
-      </div>
-      </div>
+    </div>
+      
 
 
 
       <div className="row">
-        <div className="col-sm-3 right" style={{backgroundColor:"clear"}}>
-         <a href="#" className="button">Link Button</a></div>
-        <div className="col-sm-3" style={{backgroundColor:"clear"}}></div>
-        <div className="col-sm-3 center" style={{backgroundColor:"clear"}}>
-         </div>
-         <div className="col-sm-3 left" style={{backgroundColor:"clear"}}>
-         <a href="#" className="button">Link Button</a></div>
-         </div>
+          <div className="col-sm-3 right" style={{backgroundColor:"clear"}}>
+            <a href="#" className="button">Link Button</a></div>
+          <div className="col-sm-3" style={{backgroundColor:"clear"}}></div>
+          <div className="col-sm-3 center" style={{backgroundColor:"clear"}}>
+          </div>
+          <div className="col-sm-3 left" style={{backgroundColor:"clear"}}>
+            <a href="#" className="button">Link Button</a></div>
+      </div>
+        
 
 
       <div className="row">

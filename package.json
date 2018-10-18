@@ -33,15 +33,10 @@
     "dns": "^0.2.2",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
-<<<<<<< HEAD
-    "mongoose": "^5.0.17",
-    "react-css-grid": "^2.0.0-0"
-=======
     "moment": "^2.22.2",
     "mongoose": "^5.0.17",
     "net": "^1.0.2",
     "nodemailer": "^4.6.8",
     "router-express": "^1.5.2"
->>>>>>> master
   }
 }

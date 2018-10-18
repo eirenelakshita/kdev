@@ -7,12 +7,14 @@ import NavBar from "./components/NavBar";
 
 const App = () => (
   <Router>
+    <div>
     <NavBar></NavBar>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/messages" component={Messages} />
       <Route path="/user-profile-info" component={PatientDataForm} />
     </Switch>
+    </div>
   </Router>
 )
 
