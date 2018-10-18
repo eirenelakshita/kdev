@@ -1,14 +1,20 @@
-import React, { Component } from 'react';
-import NavBar from './components/NavBar';
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-      <NavBar></NavBar>
-        <header>Hello World.</header>
-      </div>
-    );
-  }
-}
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import PatientDataForm from "./pages/Forms";
+import Messages from "./pages/Messasges";
+import Home from "./pages/Home";
+import NavBar from "./components/NavBar";
+
+const App = () => (
+  <Router>
+    <NavBar></NavBar>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/messages" component={Messages} />
+      <Route path="/user-profile-info" component={PatientDataForm} />
+    </Switch>
+  </Router>
+)
 
 export default App;
+
