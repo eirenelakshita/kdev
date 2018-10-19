@@ -13,8 +13,10 @@ class HomePage extends React.Component {
 
   state = {
     whoiam:"",
-
   };
+
+
+
 render(){
   return(
     <div style={{ backgroundColor: "white" }}>
@@ -28,21 +30,21 @@ render(){
             <p>say something for those Images.</p>
         </div>
     </div>
-
+   
 
 
         <div className="col-xs-8 col-sm-5 sidebar-offcanvas" id="sidebar">
         <div className="list-group">
         <p></p>
-            <Login />
+            <Login whoiam={this.state.whoiam}/>
             {/* <a href="/Login"> Login in as Doctor</a>
             <a href="/Login"> Login in as Patient</a> */}
         </div>
         </div>
     </div>
 
+        <div className="container-bar"></div>
           <br></br>
-    
         <div className="row row-offcanvas row-offcanvas-right">
             <div className="col-xs-12 col-lg-12">
             <h2>
@@ -59,14 +61,14 @@ render(){
                 <h2>Our service One</h2>
               <p>say something here.</p>
               <p>
-              <a className="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Button one</a>
+              <a className="btn btn-lg btn-primary" href="../../components/#navbar" role="button">See more</a>
               </p>
             </div>   
 
             <div className="col-xs-6 col-lg-6">
                 <h2>Our Service two</h2>
                 <p>say something here.</p>
-                <p><a className="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Button two</a></p>
+                <p><a className="btn btn-lg btn-primary" href="../../components/#navbar" role="button">See more</a></p>
             </div>
         </div> 
 
