@@ -1,0 +1,61 @@
+body {
+  background-image: url("https://www.stvincentsconsulting.com/img/img-480310816.jpg");
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.button {
+  background-color: #b2c675;
+  border: solid darkgreen 2px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-family: Garamond;
+}
+h1 {
+  color: white;
+  text-align: center;
+  background-color: #b2c675;
+  border: solid darkgreen 2px;
+  font-family: Garamond;
+  padding-top: 4px;
+ margin-left: 275px;
+ margin-right: 275px;
+}
+p {
+  color: white;
+  text-align: center;
+  background-color: #b2c675;
+  border: solid darkgreen 2px;
+  font-family: Garamond;
+  margin-left: 275px;
+ margin-right: 275px;
+ font-size: 20px;
+  
+}
+.center {
+  text-align: center;
+}
+
+.right{
+  text-align:right;
+}
+
+.left{
+  text-align:left;
+}
+
+.row {
+  height: 30 px;
+  padding-top: 50px;
+
+}
