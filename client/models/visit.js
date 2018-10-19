@@ -7,6 +7,10 @@ const visitSchema = new Schema({
 	Doctor_Speciality: { type: String, required: true },
 	Prescription: String,
 	Diagnosis: { type: String, required: true },
+	Lab_Result: [{
+    type: Schema.Types.ObjectId,
+    ref: "Lab_Result"
+  }],
 	Data: String,
 	Time: { type: Date, default: Date.now }
 });
