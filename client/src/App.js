@@ -5,20 +5,6 @@ import DoctorRouter from "./Routes/DoctorRouter.js";
 import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
 
-<<<<<<< HEAD
-const App = () => (
-  <Router>
-    <div>
-    <NavBar></NavBar>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/messages" component={Messages} />
-      <Route path="/user-profile-info" component={PatientDataForm} />
-    </Switch>
-    </div>
-  </Router>
-)
-=======
 class App extends Component {
   render() {
     return (
@@ -36,7 +22,6 @@ class App extends Component {
     )
   }
 }
->>>>>>> master
 
 export default App;
 
