@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import PatientDataForm from "./pages/Forms";
-import Messages from "./pages/Messasges";
-import Visits from "./pages/Visits";
-// import Home from "./pages/Home";
+import PatientRouter from "./Routes/PatientRouter.js";
+import DoctorRouter from "./Routes/DoctorRouter.js";
+import Home from "./pages/Home";
+import NavBar from "./components/NavBar";
+import PageNotFound from './pages/PageNotFound';
+import HomePage from './pages/HomePage';
+import Login from './pages/Login';
 
-const App = () => (
-  <Router>
-    <Switch>
-      {/* <Route exact path="/" component={Home} /> */}
-      <Route path="/messages" component={Messages} />
-      <Route path="/visits" component={Visits} />
-      {/* <Route path="/user-profile-info" component={PatientDataForm} /> */}
-    </Switch>
-  </Router>
-)
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Router>
+          <Switch>
+            {/* The following route will be for the landing / login page once Kevin is ready to add it. */}
+            <Route exact path="/" component={HomePage} />
+            <Route path="/patients" render={props => <PatientRouter />} />
+            <Route path="/doctors" render={props => <DoctorRouter />} />
+            <Route component={PageNotFound} />
+          </Switch>
+        </Router>
+      </div>
+    )
+  }
+}
 
 export default App;

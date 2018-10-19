@@ -3,7 +3,6 @@ import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, TextArea, FormBtn } from "../../components/Form";
-import axios from 'axios';
 // import nodemailer from "nodemailer";
 //const nodemailer = require("nodemailer");
 
