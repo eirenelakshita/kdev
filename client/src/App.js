@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import PatientDataForm from "./pages/Forms";
-import Messages from "./pages/Messasges";
+import PatientRouter from "./Routes/PatientRouter.js";
+import DoctorRouter from "./Routes/DoctorRouter.js";
 import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
 
+<<<<<<< HEAD
 const App = () => (
   <Router>
     <div>
@@ -17,6 +18,25 @@ const App = () => (
     </div>
   </Router>
 )
+=======
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Router>
+          <Switch>
+            {/* The following route will be for the landing / login page once Kevin is ready to add it. */}
+            {/* <Route exact path="/" component={LoginPage} /> */}
+            <Route path="/patients" render={props => <PatientRouter />} />
+            <Route path="/doctors" render={props => <DoctorRouter />} />
+            <Route component={Home} />
+          </Switch>
+        </Router>
+      </div>
+    )
+  }
+}
+>>>>>>> master
 
 export default App;
 
