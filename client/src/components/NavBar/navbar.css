@@ -9,25 +9,38 @@ body {
 }
 .button {
   background-color: #b2c675;
-  border: solid black 2px;
+  border: solid darkgreen 2px;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 50%;
+  font-family: Garamond;
 }
 h1 {
-  color: #b2c675;
+  color: white;
   text-align: center;
-  /* background-color:  */
+  background-color: #b2c675;
+  border: solid darkgreen 2px;
+  font-family: Garamond;
+  padding-top: 4px;
+ margin-left: 275px;
+ margin-right: 275px;
 }
 p {
-  color: #b2c675;
+  color: white;
   text-align: center;
+  background-color: #b2c675;
+  border: solid darkgreen 2px;
+  font-family: Garamond;
+  margin-left: 275px;
+ margin-right: 275px;
+ font-size: 20px;
+  
 }
 .center {
   text-align: center;
@@ -39,4 +52,10 @@ p {
 
 .left{
   text-align:left;
+}
+
+.row {
+  height: 30 px;
+  padding-top: 50px;
+
 }
