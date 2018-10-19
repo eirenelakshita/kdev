@@ -10,6 +10,7 @@ class Visits extends Component {
   // Setting our component's initial state
   state = {
     visits: [],
+    DoctorID: "",
     Doctor_Speciality: "",
     Prescription: "",
     Diagnosis: "",
@@ -24,7 +25,7 @@ class Visits extends Component {
 
   // Loads all visits  and sets them to this.state.visits
   loadVisits = () => {
-    API.getBooks()
+    API.getVisits()
       .then(res =>
         this.setState({ visits: res.data, Doctor_Speciality: "", Prescription: "", Diagnosis: "" })
       )
@@ -76,8 +77,10 @@ class Visits extends Component {
                     <ListItem key={visit._id}>
                       <a href={"/visits/" + visit._id}>
                         <strong>
-                          {visit.Doctor_Speciality} by {visit.Prescription}
+                          {visit.DoctorID} : {visit.Doctor_Speciality}
                         </strong>
+                        <h7>Date: {visit.Time}</h7>
+                        <h5>Perscribed: {visit.Prescription}</h5>
                       </a>
                       <DeleteBtn onClick={() => this.deleteVisit(visit._id)} />
                     </ListItem>

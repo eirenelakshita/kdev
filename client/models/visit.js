@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const visitSchema = new Schema({
-	// patientID:
-	// DoctorID:
+	patientID: String,
+	DoctorID: String,
 	Doctor_Speciality: { type: String, required: true },
 	Prescription: String,
 	Diagnosis: { type: String, required: true },
