@@ -51,8 +51,8 @@ const navbar = () => (
         </Col>
       </Row>
 
-           <h1>⚕️   My Patient Portal   ⚕️</h1>
-    <p>Navigate Further From This Page</p>
+           <h1 id="green-header">⚕️   My Patient Portal   ⚕️</h1>
+    <p id="green-border">Navigate Further From This Page</p>
    
  </Container>
 );
