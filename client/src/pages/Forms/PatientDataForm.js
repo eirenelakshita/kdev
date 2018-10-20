@@ -26,7 +26,7 @@ class PatientDataForm extends PureComponent {
             <Row key={"row-" + index}>
               {row.cols.map((col, i) => (
                 <Col size={col.size} key={"col-" + i}>
-                  <Input 
+                  <Input
                     label={col.fieldName}
                     name={col.fieldName.split(" ").map((word, index) => word = (index === 0) ? word.toLowerCase() : word ).join("")}
                     onChange={this.handleInputChange}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-// import {Container, Row ,Col} from "../components/Grid";
+import {Container, Row ,Col} from "../../components/Grid/Container";
 // import Jumbotron from "../components/Jumbotron";
 // import {FormBtn , Input , TextArea } from "../components/Form";
 import "./Login.css";
@@ -42,7 +42,7 @@ export default class Login extends Component{
 
       
 
-<div className="container">
+<Container id="container">
 
 <div className="d-flex justify-content-center h-100">
 <div className="card">
@@ -112,7 +112,7 @@ export default class Login extends Component{
 
 </div>
 </div>
-</div>
+</Container>
 
       
       

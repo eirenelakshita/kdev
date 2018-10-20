@@ -21,7 +21,7 @@ body {
   border-radius: 50%;
   font-family: Garamond;
 }
-h1 {
+#green_h1 {
   color: white;
   text-align: center;
   background-color: #b2c675;
@@ -31,7 +31,7 @@ h1 {
  margin-left: 275px;
  margin-right: 275px;
 }
-p {
+#green_p {
   color: white;
   text-align: center;
   background-color: #b2c675;
@@ -54,7 +54,7 @@ p {
   text-align:left;
 }
 
-.row {
+#row {
   height: 30 px;
   padding-top: 50px;
 
