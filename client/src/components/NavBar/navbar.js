@@ -1,6 +1,7 @@
 import React from 'react';
 // import Grid from 'react-css-grid';
 import './navbar.css';
+
 import { Container, Row, Col } from '../Grid';
 
 const navbar = () => (
