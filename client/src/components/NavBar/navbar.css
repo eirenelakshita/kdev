@@ -21,7 +21,7 @@ body {
   border-radius: 50%;
   font-family: Garamond;
 }
-h1 {
+#green-header {
   color: white;
   text-align: center;
   background-color: #b2c675;
@@ -31,7 +31,7 @@ h1 {
  margin-left: 275px;
  margin-right: 275px;
 }
-p {
+#green-border {
   color: white;
   text-align: center;
   background-color: #b2c675;
@@ -54,7 +54,7 @@ p {
   text-align:left;
 }
 
-.row {
+#navbar-row {
   height: 30 px;
   padding-top: 50px;
 
