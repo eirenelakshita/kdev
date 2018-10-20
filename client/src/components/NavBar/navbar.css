@@ -6,13 +6,14 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  text-align: center;
 }
 .button {
   background-color: #b2c675;
   border: solid darkgreen 2px;
   color: white;
   padding: 15px 32px;
-  text-align: center;
+  /* text-align: center; */
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
@@ -42,19 +43,19 @@ p {
  font-size: 20px;
   
 }
-.center {
+.col-center {
   text-align: center;
 }
 
-.right{
+.col-right{
   text-align:right;
 }
 
-.left{
+.col-left{
   text-align:left;
 }
 
-.row {
+row {
   height: 30 px;
   padding-top: 50px;
 
