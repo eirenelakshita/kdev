@@ -10,7 +10,8 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
-    "reactstrap": "^6.5.0"
+    "reactstrap": "^6.5.0",
+    "seed": "^0.4.4"
   },
   "scripts": {
     "start": "react-scripts start",

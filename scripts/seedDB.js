@@ -7,7 +7,15 @@ mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/kdevproject"
 );
-
+const rxSeed = [
+  {
+  rx: "Gabapentin",
+	DoctorID: "5001",
+	Doctor_Speciality:"Pain Management",
+	rxInfo: "It is used to treat seizures. It is used to treat painful nerve diseases.",
+  Time: Date.now
+  }
+]
 const visitSeed = [
   {
     patientID: "1001",
@@ -68,6 +76,18 @@ const visitSeed = [
 db.Visit
   .remove({})
   .then(() => db.Visit.collection.insertMany(visitSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+  db.Rx
+  .remove({})
+  .then(() => db.Rx.collection.insertMany(rxSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

@@ -7,7 +7,7 @@ import NavBar from "./components/NavBar";
 import PageNotFound from './pages/PageNotFound';
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
-import Prescriptions from './pages/Prescriptions';
+// import Rx from './pages/Rx';
 
 class App extends Component {
   render() {
