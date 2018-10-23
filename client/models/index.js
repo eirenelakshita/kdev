@@ -1,4 +1,10 @@
 module.exports = {
   Visit: require("./visit"),
-  VisitLog: require("./visitLog")
+<<<<<<< HEAD
+  // VisitLog: require("./visitLog"),
+  Rx: require("./rx")
+=======
+  DoctorInfo: require("./doctorInfo")
+  // VisitLog: require("./visitLog")
+>>>>>>> @{-1}
 };
