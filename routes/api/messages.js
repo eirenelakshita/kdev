@@ -16,7 +16,7 @@ router.route("/")
 
     var mailOptions = {
       from: 'kdev.spring2018@gmail.com',
-      to: 'kdev.spring2018@gmail.com ',
+      to: 'victoria.ashling@gmail.com ',
       subject: 'KDEV ' + req.body.sender + " sent: " + req.body.subject,
       text: "From: " + req.body.email + "\n" + req.body.body
     };

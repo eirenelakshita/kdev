@@ -40,11 +40,11 @@ class Messages extends Component {
         if (this.state.sender && this.state.email) {
           API.postMessage(
             {
-            sender: this.state.sender,
-            email: this.state.email,
-            subject: this.state.subject,
-            body: this.state.body
-          }
+              sender: this.state.sender,
+              email: this.state.email,
+              subject: this.state.subject,
+              body: this.state.body
+            }
           )
             .then(res => console.log(res))
             .catch(err => console.log(err));
