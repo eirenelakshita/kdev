@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const nodemailer = require("nodemailer");
-// const messagesController = require("../../controllers/messagesController");
 
 // Matches with "/api/messages"
 router.route("/")

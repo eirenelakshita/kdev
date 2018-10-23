@@ -1,1 +1,1 @@
-export {default} from './LabResult';
+export { default } from './LabResult';

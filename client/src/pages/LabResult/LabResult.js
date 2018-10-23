@@ -13,16 +13,13 @@ import XRay from './XRay';
 export default class LabResult extends Component{
 
   state = {
-    
     currentPage:""
   }
 
   handlePageChange = page =>{
     this.setState({
-      currentPage:page
-      
+      currentPage: page 
     })
-
   }
 
   renderPage = () => {
@@ -45,11 +42,9 @@ export default class LabResult extends Component{
           handlePageChange={this.handlePageChange}
          />
          </Col>
-         <Col>{this.state.currentPage ? this.renderPage():"Welcome to MY Lab Result Page"}</Col>
+         <Col>{this.state.currentPage ? this.renderPage(): "Welcome to your Lab Results Page"}</Col>
        </Row>
       </div>
     )
-
-
   }
 }

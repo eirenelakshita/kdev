@@ -4,9 +4,7 @@ import {Container, Row ,Col} from "reactstrap";
 
 const Drug = props => (
 
-
-<div>
-  <div className="container">
+  <Container>
     <h3>Drug Testing Result:</h3>
     <Row>
       <Col>1. Patient Details</Col>
@@ -18,21 +16,14 @@ const Drug = props => (
     <Row>
       <Col></Col>
       <Col>
-      <img src="https://media.americanpharmaceuticalreview.com/m/28/article/115455-1.jpg" 
-          alt="chest X-Ray" height="500" width="500"></img>
+        <img src="https://media.americanpharmaceuticalreview.com/m/28/article/115455-1.jpg" 
+            alt="chest X-Ray" height="500" width="500"></img>
       </Col>
       <Col></Col>
     </Row>
     <hr></hr>
-  </div>
+  </Container>
 
-
-
-</div>
-
-
-
-
-)
+);
 
 export default Drug;

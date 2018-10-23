@@ -55,26 +55,25 @@ class Rx extends Component {
                   let choppedDate = this.chopDate(rx.Time);
                   return (
                     <ListItem key={rx._id}>
-                      {/* <a href={"/rx/" + rx._id}>Visit</a> */}
-                      <div className="row">
-                        <div className="col-3">
+                      <Row>
+                        <Col size="3">
                           <h5><strong>
                             {choppedDate}
                           </strong></h5>
-                        </div>
-                        <div className="col-9">
+                        </Col>
+                        <Col size="9">
                           <h5><strong>
                             {rx.DoctorID} ({rx.Doctor_Speciality})
-                      </strong></h5>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-3"></div>
-                        <div className="col-9">
+                          </strong></h5>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col size="3" />
+                        <Col size="9">
                           <p>Notes: {rx.drugInfo}</p>
                           {/* <p>Prescription: {rx.Prescription}</p> */}
-                        </div>
-                      </div>
+                        </Col>
+                      </Row>
                       <DeleteBtn onClick={() => this.deleteRx(rx._id)} />
                     </ListItem>
                   );

@@ -16,7 +16,7 @@ class PatientRouter extends Component {
         <Switch>
           <Route path="/patients/messages" component={Messages} />
           <Route path="/patients/profile-info" component={ProfileInfo} />
-          <Route path="/patients/Lab_Result" component={LabResult} />
+          <Route path="/patients/lab-result" component={LabResult} />
           <Route path="/patients/visits" component={Visits} />
           <Route path="/patients/rx" component={Rx} />
           <Route component={Home} />
