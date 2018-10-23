@@ -1,4 +1,5 @@
 module.exports = {
   Visit: require("./visit"),
-  VisitLog: require("./visitLog")
+  DoctorInfo: require("./doctorInfo")
+  // VisitLog: require("./visitLog")
 };

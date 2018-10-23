@@ -7,7 +7,15 @@ mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/kdevproject"
 );
-
+const rxSeed = [
+  {
+  rx: "Gabapentin",
+	DoctorID: "5001",
+	Doctor_Speciality:"Pain Management",
+	rxInfo: "It is used to treat seizures. It is used to treat painful nerve diseases.",
+  Time: Date.now
+  }
+]
 const visitSeed = [
   {
     patientID: "1001",
@@ -65,9 +73,96 @@ const visitSeed = [
   }
 ];
 
+const doctorInfoSeed = [
+  {
+    First_Name: "Anne",
+	  Last_Name: "Hathaway",
+    Phone: "404-411-1212",
+    Fax: "678-888-8888",
+	  Email: "anne.hathaway@gmail.com",
+    Street: "1890 S. Main Street",
+    City: "Alpharetta",
+    State: "GA",
+    ZIP: "30009",
+    Country: "USA",
+	  Specialty: "Internist",
+	  Business_hours: "9AM - 5PM Mon-Fri", 
+	  Locations: ["Emory Hospital Decatur", "Northside Hospital Cumming"],
+    Insurances: ["Ambetter", "Blue Cross Blue Shield"],
+    Board_Certifications: ["American Board of Internal Medicine"],
+    Education_and_Training: ["Medical School - Smt. N.H.L. Municipal Medical College, Bachelor of Medicine, Bachelor of Surgery",
+    "New York Medical College, Our Lady of Mercy Medical Center (Internship)",
+    "The Brookdale Hospital Medical Center, Residency in Internal Medicine",
+    "Children’s Hospital of Austin (Internship)"],
+    Languages_Spoken: ["English", "Spanish"],
+    Gender: "Female",
+    NPI_Number: 1891863141
+  },
+  {
+    First_Name: "Chris",
+	  Last_Name: "Hemsworth",
+    Phone: "404-455-5500",
+    Fax: "678-888-9090",
+	  Email: "c.hemsworth@gmail.com",
+    Street: "2090 Pleasant Hill Dr",
+    City: "Duluth",
+    State: "GA",
+    ZIP: "30033",
+    Country: "USA",
+	  Specialty: "Optometrist",
+	  Business_hours: "10AM - 4PM Mon-Sat", 
+	  Locations: ["Emory Hospital Decatur", "Northside Hospital Cumming"],
+    Insurances: ["Amica", "United Healthcare"],
+    Board_Certifications: ["American Board of Internal Medicine"],
+    Education_and_Training: ["Medical School - Smt. N.H.L. Municipal Medical College, Bachelor of Medicine, Bachelor of Surgery",
+    "New York Medical College, Our Lady of Mercy Medical Center (Internship)",
+    "The Brookdale Hospital Medical Center, Residency in Internal Medicine",
+    "Children’s Hospital of Austin (Internship)"],
+    Languages_Spoken: ["English", "Spanish"],
+    Gender: "Female",
+    NPI_Number: 1891863141
+  },
+  {
+    First_Name: "Anne",
+	  Last_Name: "Hathaway",
+    Phone: "404-411-1212",
+    Fax: "678-888-8888",
+	  Email: "anne.hathaway@gmail.com",
+    Street: "1890 S. Main Street",
+    City: "Alpharetta",
+    State: "GA",
+    ZIP: "30009",
+    Country: "USA",
+	  Specialty: "Internist",
+	  Business_hours: "9AM - 5PM Mon-Fri", 
+	  Locations: ["Emory Hospital Decatur", "Northside Hospital Cumming"],
+    Insurances: ["Kaiser Permanente", "Aetna", "Humana"],
+    Board_Certifications: ["American Board of Internal Medicine"],
+    Education_and_Training: ["Medical School - Smt. N.H.L. Municipal Medical College, Bachelor of Medicine, Bachelor of Surgery",
+    "New York Medical College, Our Lady of Mercy Medical Center (Internship)",
+    "The Brookdale Hospital Medical Center, Residency in Internal Medicine",
+    "Children’s Hospital of Austin (Internship)"],
+    Languages_Spoken: ["English", "Spanish"],
+    Gender: "Female",
+    NPI_Number: 1891863141
+  }
+];
+
 db.Visit
   .remove({})
   .then(() => db.Visit.collection.insertMany(visitSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+db.DoctorInfo
+  .remove({})
+  .then(() => db.DoctorInfo.collection.insertMany(doctorInfoSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
