@@ -5,6 +5,7 @@ import DoctorRouter from "./Routes/DoctorRouter.js";
 import PageNotFound from './pages/PageNotFound';
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
+import Prescriptions from './pages/Prescriptions';
 
 class App extends Component {
   render() {

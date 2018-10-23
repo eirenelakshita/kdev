@@ -32,6 +32,10 @@ class Visits extends Component {
       .catch(err => console.log(err));
   };
 
+  chopDate = Date => {
+    return Date.substring(0, 10)
+  }
+
   // Deletes a visit from the database with a given id, then reloads visits from the db
   deleteVisit = id => {
     API.deleteVisit(id)
@@ -73,23 +77,37 @@ class Visits extends Component {
             {this.state.visits.length ? (
               <List>
                 {this.state.visits.map(visit => {
+                  let choppedDate = this.chopDate(visit.Time);
                   return (
                     <ListItem key={visit._id}>
-                      <a href={"/visits/" + visit._id}>
-                        <strong>
-                          {visit.DoctorID} : {visit.Doctor_Speciality}
-                        </strong>
-                        <h7>Date: {visit.Time}</h7>
-                        <h5>Perscribed: {visit.Prescription}</h5>
-                      </a>
+                      {/* <a href={"/visits/" + visit._id}>Visit</a> */}
+                      <div className="row">
+                        <div className="col-3">
+                          <h5><strong>
+                            {choppedDate}
+                          </strong></h5>
+                        </div>
+                        <div className="col-9">
+                          <h5><strong>
+                            {visit.DoctorID} ({visit.Doctor_Speciality})
+                      </strong></h5>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-3"></div>
+                        <div className="col-9">
+                          <p>Notes: {visit.Data}</p>
+                          <p>Prescription: {visit.Prescription}</p>
+                        </div>
+                      </div>
                       <DeleteBtn onClick={() => this.deleteVisit(visit._id)} />
                     </ListItem>
                   );
                 })}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
-            )}
+                <h3>No Results to Display</h3>
+              )}
           </Col>
         </Row>
       </Container>
