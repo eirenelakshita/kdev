@@ -25,7 +25,7 @@ render(){
   <div className="row row-offcanvas row-offcanvas-right" >
     <div className="col-xs-10 col-sm-7">
         <p></p>
-        <div className="jumbotron">
+        <div className="jumbotron jumbotronForHP">
             <h1>Health Cares</h1>
             <p>say something for those Images.</p>
         </div>
