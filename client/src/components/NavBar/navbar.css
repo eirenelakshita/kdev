@@ -21,28 +21,28 @@ body {
   border-radius: 50%;
   font-family: Garamond;
 }
-h1 {
+#green-header {
   color: white;
   text-align: center;
   background-color: #b2c675;
   border: solid darkgreen 2px;
   font-family: Garamond;
   padding-top: 4px;
- margin-left: 275px;
- margin-right: 275px;
+  margin-left: 275px;
+  margin-right: 275px;
 }
-p {
+#green-border {
   color: white;
   text-align: center;
   background-color: #b2c675;
   border: solid darkgreen 2px;
   font-family: Garamond;
   margin-left: 275px;
- margin-right: 275px;
- font-size: 20px;
+  margin-right: 275px;
+  font-size: 20px;
   
 }
-.center {
+#col-center {
   text-align: center;
 }
 

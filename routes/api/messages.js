@@ -3,7 +3,6 @@ const nodemailer = require("nodemailer");
 // const messagesController = require("../../controllers/messagesController");
 
 // Matches with "/api/messages"
-// Listening for post & get request
 router.route("/")
   .post(function (req, res) {
     console.log(req.body);

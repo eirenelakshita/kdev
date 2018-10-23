@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const db = require("../client/models");
 
-// This file empties the Books collection and inserts the books below
-
 mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/kdevproject"
@@ -11,12 +9,12 @@ mongoose.connect(
 const visitSeed = [
   {
     patientID: "1001",
-	DoctorID: "5001",
-	Doctor_Speciality: "Dental",
-	Prescription: "Morphine",
-	Diagnosis: "Crown needed",
-  Data: "Come again",
-  Time: Date.now
+    DoctorID: "5001",
+    Doctor_Speciality: "Dental",
+    Prescription: "Morphine",
+    Diagnosis: "Crown needed",
+    Data: "Come again",
+    Time: Date.now
   },
   {
     patientID: "1002",

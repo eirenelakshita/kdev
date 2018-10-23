@@ -1,6 +1,8 @@
 import React from 'react';
-// import Grid from 'react-css-grid';
 import './navbar.css';
+import { Container, Row, Col } from "../Grid";
+
+
 const navbar = () => (
 
   <div className="container-fluid">
@@ -11,6 +13,16 @@ const navbar = () => (
       </div>
       <div className="col-sm-3" style={{backgroundColor:"clear"}}></div>
     </div>
+
+    {/* // <Container fluid>
+    //   <Row>
+    //     <Col size="sm-3" style={{backgroundColor:"clear"}} />
+    //     <Col size="sm-6" id="col-center" style={{backgroundColor:"clear"}}>
+    //       <a href="#" className="button">Primary Care</a>
+    //     </Col>
+    //     <Col size="sm-3" style={{backgroundColor:"clear"}} />
+    //   </Row>
+    // </Container> */}
 
     <div className="row">
       <div className="col-sm-4 right" style={{backgroundColor:"clear"}}>
@@ -52,8 +64,8 @@ const navbar = () => (
 
            </div>
 
-           <h1>⚕️   My Patient Portal   ⚕️</h1>
-    <p>Navigate Further From This Page</p>
+           <h1 id="green-header">⚕️   My Patient Portal   ⚕️</h1>
+    <p id="green-border">Navigate Further From This Page</p>
    
   </div>
 );
