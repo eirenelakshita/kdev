@@ -6,7 +6,7 @@ import { Container, Row, Col } from '../Grid';
 const navbar = () => (
   
 <Container fluid>
-      <Row>
+      <Row id="row-nav">
         <Col size="sm-4" style={{backgroundColor:"clear"}} />
         <Col size="sm-4" id="col-center" style={{backgroundColor:"clear"}}>
           <a href="#" className="button">Primary Care</a>
@@ -14,7 +14,7 @@ const navbar = () => (
         <Col size="sm-4" style={{backgroundColor:"clear"}} />
       </Row>
     
-      <Row>
+      <Row id="row-nav">
         <Col size="sm-3" style={{backgroundColor:"clear"}} />
         <Col size="sm-3" id="col-right" style={{backgroundColor:"clear"}}>
           <a href="#" className="button">Dentist</a>
@@ -25,7 +25,7 @@ const navbar = () => (
         <Col size="sm-3" style={{backgroundColor:"clear"}} />
       </Row>
      
-      <Row>
+      <Row id="row-nav">
         <Col size="sm-2" style={{backgroundColor:"clear"}} />
         <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
           <a href="#" className="button">Specialist</a>
@@ -38,7 +38,7 @@ const navbar = () => (
         <Col size="sm-2" style={{backgroundColor:"clear"}} />
       </Row>
 
-      <Row>
+      <Row id="row-nav">
         <Col size="sm-4" id="col-center" style={{backgroundColor:"clear"}}>
           <a href="#" className="button">Pharmacy</a>
         </Col>
