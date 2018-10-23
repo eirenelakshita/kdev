@@ -7,7 +7,15 @@ mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/kdevproject"
 );
-
+const rxSeed = [
+  {
+  rx: "Gabapentin",
+	DoctorID: "5001",
+	Doctor_Speciality:"Pain Management",
+	rxInfo: "It is used to treat seizures. It is used to treat painful nerve diseases.",
+  Time: Date.now
+  }
+]
 const visitSeed = [
   {
     patientID: "1001",
