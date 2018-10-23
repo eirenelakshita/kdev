@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const rxController = require("../../controllers/rxController");
+const rxController = require("../../controllers/rxControllers");
 
 // Matches with "/api/books"
-router.route("/rx")
+router.route("/")
   .get(rxController.findAll)
   .post(rxController.create);
 
