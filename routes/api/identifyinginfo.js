@@ -1,9 +1,7 @@
 const router = require("express").Router();
+const formController = require("../../controllers/formController");
 
 router.route("/")
-  .post((req, res) => {
-    console.log("A hit! A direct hit!");
-    res.end();
-  })
+  .post(formController.create)
 
 module.exports = router;

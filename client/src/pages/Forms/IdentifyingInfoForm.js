@@ -8,7 +8,10 @@ import "./IdentifyingInfoForm.css";
 class IdentifyingInfoForm extends PureComponent {
 
   state = {
-    formData: {}
+    formData: {
+      email: "dummy",
+      password: "forNow"
+    }
   }
 
   handleInputChange = event => {
@@ -21,9 +24,12 @@ class IdentifyingInfoForm extends PureComponent {
     event.preventDefault();
     console.log(this.state.formData);
     FormAPI.submitForm(this.state.formData)
-      .then(res => console.log("hi" + res))
+      .then(res => {
+        console.log(res);
+        document.getElementById("identifyingInfoForm").reset();
+        this.setState({ formData: { email: "dummy", password: "forNow" } })
+      })
       .catch(err => console.log(err))
-    document.getElementById("identifyingInfoForm").reset();
   }
 
   render() {
