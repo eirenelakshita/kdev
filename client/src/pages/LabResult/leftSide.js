@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router , Route , Link } from 'react-router-dom';
 
-const leftSidr = props =>(
+const leftSide = props =>(
   <div>
     <ul>
     <li><Link
@@ -30,5 +30,5 @@ const leftSidr = props =>(
 
 
 
-export default leftSidr;
+export default leftSide;
 

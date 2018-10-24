@@ -3,8 +3,6 @@ import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, TextArea, FormBtn } from "../../components/Form";
-// import nodemailer from "nodemailer";
-//const nodemailer = require("nodemailer");
 
 class Messages extends Component {
   state = {
@@ -40,11 +38,11 @@ class Messages extends Component {
         if (this.state.sender && this.state.email) {
           API.postMessage(
             {
-            sender: this.state.sender,
-            email: this.state.email,
-            subject: this.state.subject,
-            body: this.state.body
-          }
+              sender: this.state.sender,
+              email: this.state.email,
+              subject: this.state.subject,
+              body: this.state.body
+            }
           )
             .then(res => console.log(res))
             .catch(err => console.log(err));
