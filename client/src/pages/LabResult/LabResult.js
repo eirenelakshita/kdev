@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom'
-import {Row ,Col} from "reactstrap";
+import {Row ,Col} from "../../components/Grid";
 import './LabResult.css';
 import LeftSide from './leftSide';
 import Blood from './Blood';
@@ -13,16 +13,13 @@ import XRay from './XRay';
 export default class LabResult extends Component{
 
   state = {
-    
     currentPage:""
   }
 
   handlePageChange = page =>{
     this.setState({
-      currentPage:page
-      
+      currentPage: page 
     })
-
   }
 
   renderPage = () => {
@@ -39,17 +36,15 @@ export default class LabResult extends Component{
     return(
       <div className="container" id="style">
        <Row>
-         <Col xs="3"> 
+         <Col size="xs-3"> 
          <LeftSide
           currentPage={this.state.currentPage}
           handlePageChange={this.handlePageChange}
          />
          </Col>
-         <Col xs="9">{this.state.currentPage ? this.renderPage():"Welcome to MY Lab Result Page"}</Col>
+         <Col size="xs-9">{this.state.currentPage ? this.renderPage():"Welcome to MY Lab Result Page"}</Col>
        </Row>
       </div>
     )
-
-
   }
 }

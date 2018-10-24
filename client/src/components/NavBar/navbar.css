@@ -29,8 +29,8 @@ body {
   border: solid darkgreen 2px;
   font-family: Garamond;
   padding-top: 4px;
- margin-left: 275px;
- margin-right: 275px;
+  margin-left: 275px;
+  margin-right: 275px;
 }
 #green-border {
   color: white;
@@ -39,8 +39,8 @@ body {
   border: solid darkgreen 2px;
   font-family: Garamond;
   margin-left: 275px;
- margin-right: 275px;
- font-size: 20px;
+  margin-right: 275px;
+  font-size: 20px;
   
 }
 .col-center {

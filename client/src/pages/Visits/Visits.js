@@ -81,25 +81,25 @@ class Visits extends Component {
                   return (
                     <ListItem key={visit._id}>
                       {/* <a href={"/visits/" + visit._id}>Visit</a> */}
-                      <div className="row">
-                        <div className="col-3">
+                      <Row>
+                        <Col size="3">
                           <h5><strong>
                             {choppedDate}
                           </strong></h5>
-                        </div>
-                        <div className="col-9">
+                        </Col>
+                        <Col size="9">
                           <h5><strong>
                             {visit.DoctorID} ({visit.Doctor_Speciality})
-                      </strong></h5>
-                        </div>
-                      </div>
-                      <div className="row">
-                        <div className="col-3"></div>
-                        <div className="col-9">
+                          </strong></h5>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col size="3"></Col>
+                        <Col size="9">
                           <p>Notes: {visit.Data}</p>
                           <p>Prescription: {visit.Prescription}</p>
-                        </div>
-                      </div>
+                        </Col>
+                      </Row>
                       <DeleteBtn onClick={() => this.deleteVisit(visit._id)} />
                     </ListItem>
                   );

@@ -1,1 +1,1 @@
-export { default } from "./PatientDataForm.js";
+export { default } from "./IdentifyingInfoForm.js";

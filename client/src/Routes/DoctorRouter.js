@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../pages/Home";
+import NavBar from "../components/NavBar";
 import Visits from "../pages/Visits";
 
 const DoctorTest = () => (
@@ -11,7 +12,7 @@ class DoctorRouter extends Component {
   render() {
     return (
       <div>
-        {/* The navbar will go here. */}
+        <NavBar />
         <Switch>
           <Route path="/doctors/test" component={DoctorTest} />
           <Route path="/doctors/visits" component={Visits} />

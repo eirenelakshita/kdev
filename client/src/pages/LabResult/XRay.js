@@ -4,8 +4,7 @@ import {Container, Row ,Col} from "reactstrap";
 
 const XRay = props =>(
 
-  <div>
-  <div className="container">
+  <Container>
     <h3>X-Ray Testing Result:</h3>
     <Row>
       <Col>1. Patient Details</Col>
@@ -38,11 +37,7 @@ const XRay = props =>(
     </Row>
     <hr></hr>
     
-  </div>
-
-
-
-</div>
+  </Container>
 
 )
 
