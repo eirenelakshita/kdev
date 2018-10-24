@@ -36,6 +36,8 @@
     "mongoose": "^5.0.17",
     "net": "^1.0.2",
     "nodemailer": "^4.6.8",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "router-express": "^1.5.2"
   }
 }
