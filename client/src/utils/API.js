@@ -2,6 +2,12 @@ import axios from "axios";
 
 
 export default {
+
+  //Lab Result for Blood test
+  getLabresultBlood:function(){
+      return axios.get("/api/Blood");
+  },
+
   postMessage: function(input) {
     return axios.post("/api/messages", input);
   },

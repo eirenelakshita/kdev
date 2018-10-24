@@ -39,13 +39,13 @@ export default class LabResult extends Component{
     return(
       <div className="container" id="style">
        <Row>
-         <Col>
+         <Col xs="3"> 
          <LeftSide
           currentPage={this.state.currentPage}
           handlePageChange={this.handlePageChange}
          />
          </Col>
-         <Col>{this.state.currentPage ? this.renderPage():"Welcome to MY Lab Result Page"}</Col>
+         <Col xs="9">{this.state.currentPage ? this.renderPage():"Welcome to MY Lab Result Page"}</Col>
        </Row>
       </div>
     )

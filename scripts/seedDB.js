@@ -7,6 +7,30 @@ mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/kdevproject"
 );
+
+const LabResultBlood = [
+  {
+    First_Name: "David",
+	  Last_Name: "Hi",
+    Insurances: "Humana",
+    Time: Date.now,
+    Age: 50,
+    Gender: "Female",
+    WBC:6.9,
+    RBC:100,
+    HB:111,
+    HCT:222,
+    MCV:333,
+    MCH:444,
+    MCHC:555,
+    RDW:666,
+    Platelet:777,
+    Mean_Platelet_Volume:888,
+  }
+];
+
+
+
 const rxSeed = [
   {
   rx: "Gabapentin",
@@ -15,7 +39,7 @@ const rxSeed = [
 	rxInfo: "It is used to treat seizures. It is used to treat painful nerve diseases.",
   Time: Date.now
   }
-]
+];
 const visitSeed = [
   {
     patientID: "1001",
@@ -147,6 +171,20 @@ const doctorInfoSeed = [
     NPI_Number: 1891863141
   }
 ];
+
+
+db.LabResult_Blood
+  .remove({})
+  .then(() => db.LabResult_Blood.collection.insertMany(LabResultBlood))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+      })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+      });
+
 
 db.Visit
   .remove({})
