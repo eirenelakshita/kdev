@@ -1,11 +1,10 @@
 const express = require("express");
+const app = express();
+const routes = require("./routes");
+const PORT = process.env.PORT || 3001;
 
 const mongoose = require("mongoose");
-// const nodemailer = require("nodemailer");
-const routes = require("./routes");
-const app = express();
-const PORT = process.env.PORT || 3001;
-const db = require("./client/models");
+const db = require("./models");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -20,12 +19,6 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/kdevproject");
-
-
-
-
-
-
 
 // Start the API server
 app.listen(PORT, function() {

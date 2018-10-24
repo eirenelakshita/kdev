@@ -6,7 +6,7 @@ class NoPage extends Component{
   render(){
     return(
       <div>
-        <h1>No Pages found and 404</h1>
+        <h1>404: Page not found.</h1>
       </div>
     );
   }
