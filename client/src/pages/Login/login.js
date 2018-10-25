@@ -28,9 +28,11 @@ export default class Login extends Component{
     console.log("handle form works");
     API.patientLogin({ username: this.state.username, password: this.state.password})
       .then(res => {
-        console.log(res)
+        if (res.status === 200) {
+          console.log(res.data);
+        }
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log(err)); //this is where we will tell user there has been an error
   };
 
   render(){

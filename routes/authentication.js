@@ -1,36 +1,31 @@
 const passport = require("passport");
 const Strategy = require("passport-local").Strategy;
-const router = require("express").Router;
-
 const db = require("../models");
 
-passport.use("local-signin-patient", new Strategy(
-  (username, password, cb) => {
-    console.log("hello", username);
-    // db.Patient.findOne({ email: username }).then((user) => {
-    //   if (!user) return cb(null, false);
-    //   if (user.dataValues.password !== password) return cb (null, false);
 
-    //   console.log("user:", user.dataValues);
-    //   return cb(null, user);
-    // })
-    if (username === "username" && password === "password") {
-      return cb(null, user)
-    } else {
-      return cb(null, false)
-    }
-  })
-)
+module.exports = app => {
+  passport.use("local-patient-signin", new Strategy(
+    (username, password, cb) => {
+      console.log("hello", username);
+      db.Patient.findOne({ username: username }).then((user) => {
+        if (!user) return cb(null, false);
+        if (user.password !== password) return cb (null, false);
 
-passport.serializeUser((user, cb) => cb(null,user.id));
+        console.log("user:", user);
+        return cb(null, user);
+      })
+    })
+  )
 
-passport.deserializeUser((id, cb) => {
-  db.Patient.findById({ id }).then(user => cb(null,user));
-})
+  passport.serializeUser((user, cb) => cb(null, user._id));
 
-router.route("/")
-  .post(passport.authenticate("local-sigin-patient", {successRedirect: "/patients", failureRedirect: "/"}), (req,res) => {
-    console.log("success");
+  passport.deserializeUser((id, cb) => {
+    db.Patient.findById({ id }).then(user => cb(null, user));
   });
 
-module.exports = router;
+
+  app.post("/login", passport.authenticate("local-patient-signin"), (req,res) => {
+    console.log(req.body);
+    res.json({"field": "hi"});
+  });
+};
