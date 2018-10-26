@@ -1,5 +1,5 @@
 body {
-  background-image: url("https://www.stvincentsconsulting.com/img/img-480310816.jpg");
+  /* background-image: url("https://cdn.hipwallpaper.com/i/40/91/L1YQNU.jpg"); */
   height: 100%;
   width: 100%;
   background-position: center;
@@ -7,6 +7,14 @@ body {
   background-size: cover;
   background-attachment: fixed;
   text-align: center;
+}
+.header {
+  position: absolute;
+  left: 20px;
+}
+.header1 {
+  position: absolute;
+  right: 20px;
 }
 .button {
   background-color: #b2c675;
