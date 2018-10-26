@@ -13,6 +13,7 @@ class PatientRouter extends Component {
     return(
       <div>
         <NavBar />
+        <div>
         <Switch>
           <Route path="/patients/messages" component={Messages} />
           <Route path="/patients/profile-info" component={ProfileInfo} />
@@ -21,6 +22,9 @@ class PatientRouter extends Component {
           <Route path="/patients/rx" component={Rx} />
           <Route component={Home} />
         </Switch>
+
+        </div>
+       
       </div>
     )
   }

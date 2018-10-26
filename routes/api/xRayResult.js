@@ -1,11 +1,11 @@
 const router = require("express").Router();
-const xrayController = require("../../controllers/xRayController");
+const xRayController = require("../../controllers/xRayController");
 
 
 
-// Matches with "/api/blood"
+// Matches with "/api/xRay"
 router.route("/")
-  .get(xrayController.findAll)
+  .get(xRayController.findAll)
   
 
 // Matches with "/api/visits/:id"

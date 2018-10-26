@@ -6,7 +6,7 @@ export default {
 
   //Lab Result for XRay test
   getLabresultXRay: function(){
-    return axios.get("/api/XRay");
+    return axios.get("/api/xRay");
   },
 
 

@@ -1,69 +1,77 @@
 import React from 'react';
 import { Container, Row, Col } from '../Grid';
+import {BrowserRouter as Router , Route , Link } from 'react-router-dom';
 import './navbar.css';
 
+
 const navbar = () => (
-  
-<Container fluid> 
-<header class="header">
-   <a href="/patients">Patients Home</a>
- </header>
- <header1 className="header1">
- <a href="#">Log Out</a>
- </header1>
-      {/* <Row id="row-nav">
-        <Col size="sm-4" style={{backgroundColor:"clear"}} />
-        <Col size="sm-4" id="col-center" style={{backgroundColor:"clear"}}>
-          <a href="#" className="button">Primary Care</a>
-        </Col>
-        <Col size="sm-4" style={{backgroundColor:"clear"}} />
-      </Row> */}
-    
-      <Row id="row-nav">
+
+ 
+    <Container fluid>
+    <header className="header">
+      <Link to="/patients">Patients Home</Link>
+    </header>
+
+    <header className="header1">
+      <Link to="#">Log Out</Link>
+    </header>
+
+       {/* <Row id="row-nav">
+         <Col size="sm-4" style={{backgroundColor:"clear"}} />
+         <Col size="sm-4" id="col-center" style={{backgroundColor:"clear"}}>
+           <a href="#" className="button">Primary Care</a>
+         </Col>
+         <Col size="sm-4" style={{backgroundColor:"clear"}} />
+       </Row> */}
+
+    <Row id="row-nav">
         <Col size="sm-3" style={{backgroundColor:"clear"}} />
         <Col size="sm-2" id="col-right" style={{backgroundColor:"clear"}}>
-          <a href="patients/messages" className="button">Messages</a>
+          <Link to="/patients/messages" className="button">Messages</Link>
         </Col>
         <Col size="sm-2" id="col-center" style={{backgroundColor:"clear"}}>
-          <a href="/patients/profile-info" className="button">Patient Info</a>
+          <Link to="/patients/profile-info" className="button">Patient Info</Link>
         </Col>
         <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
-          <a href="patients/visits" className="button">Visits</a>
+          <Link to="/patients/visits" className="button">Visits</Link>
         </Col>
         <Col size="sm-3" style={{backgroundColor:"clear"}} />
-      </Row>
-     
-      <Row id="row-nav">
+    </Row>
+
+
+    <Row id="row-nav">
         <Col size="sm-2" style={{backgroundColor:"clear"}} />
         <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
-          <a href="#" className="button">Calendar</a>
+          <Link to="#" className="button">Calendar</Link>
         </Col>
         <Col size="sm-2" style={{backgroundColor:"clear"}} />
         <Col size="sm-2" style={{backgroundColor:"clear"}} />
         <Col size="sm-2" id="col-right" style={{backgroundColor:"clear"}}>
-          <a href="/patients/lab-result" className="button">Lab Results</a>
+          <Link to="/patients/lab-result" className="button">Lab Results</Link>
         </Col>
         <Col size="sm-2" style={{backgroundColor:"clear"}} />
-      </Row>
+    </Row>
 
-      <Row id="row-nav">
-        <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
-          <a href="patients/rx" className="button">Pharmacy</a>
-        </Col>
-        {/* <Col size="sm-2" style={{backgroundColor:"clear"}} /> */}
-        {/* <Col size="sm-1" style={{backgroundColor:"clear"}} /> */}
-        <Col size="sm-2" style={{backgroundColor:"clear"}}>
-        <a>⚕️ My Patient Portal ⚕️</a>
-        </Col>
-        {/* <Col size="sm-2" style={{backgroundColor:"clear"}} /> */}
-        <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
-          <a href="#" className="button">Cardiologist</a>
-        </Col>
-      </Row>
 
-   
-   
- </Container>  
+    <Row id="row-nav">
+      <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
+          <Link to="/patients/rx" className="button">Pharmacy</Link>
+      </Col>
+         {/* <Col size="sm-2" style={{backgroundColor:"clear"}} /> */}
+         {/* <Col size="sm-1" style={{backgroundColor:"clear"}} /> */}
+      <Col size="sm-2" style={{backgroundColor:"clear"}}>
+        <Link to="/patients">⚕️ My Patient Portal ⚕️</Link>
+      </Col>
+         {/* <Col size="sm-2" style={{backgroundColor:"clear"}} /> */}
+      <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
+          <Link to="/patients/Cardiologist" className="button">Cardiologist</Link>
+      </Col>
+    </Row>
+
+
+    
+    
+    </Container>
 
 );
 
