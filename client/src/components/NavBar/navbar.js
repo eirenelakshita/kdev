@@ -3,9 +3,14 @@ import { Container, Row, Col } from '../Grid';
 import './navbar.css';
 
 const navbar = () => (
- 
+  
 <Container fluid> 
-
+<header class="header">
+   <a href="/patients">Patients Home</a>
+ </header>
+ <header1 className="header1">
+ <a href="#">Log Out</a>
+ </header1>
       {/* <Row id="row-nav">
         <Col size="sm-4" style={{backgroundColor:"clear"}} />
         <Col size="sm-4" id="col-center" style={{backgroundColor:"clear"}}>
@@ -20,7 +25,7 @@ const navbar = () => (
           <a href="patients/messages" className="button">Messages</a>
         </Col>
         <Col size="sm-2" id="col-center" style={{backgroundColor:"clear"}}>
-          <a href="#" className="button">Patient Info</a>
+          <a href="/patients/profile-info" className="button">Patient Info</a>
         </Col>
         <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
           <a href="patients/visits" className="button">Visits</a>
@@ -36,7 +41,7 @@ const navbar = () => (
         <Col size="sm-2" style={{backgroundColor:"clear"}} />
         <Col size="sm-2" style={{backgroundColor:"clear"}} />
         <Col size="sm-2" id="col-right" style={{backgroundColor:"clear"}}>
-          <a href="#" className="button">Lab Results</a>
+          <a href="/patients/lab-result" className="button">Lab Results</a>
         </Col>
         <Col size="sm-2" style={{backgroundColor:"clear"}} />
       </Row>
@@ -56,8 +61,7 @@ const navbar = () => (
         </Col>
       </Row>
 
-           {/* <h1 id="green-header">⚕️   My Patient Portal   ⚕️</h1> */}
-    {/* <p id="green-border">Navigate Further From This Page</p> */}
+   
    
  </Container>  
 
