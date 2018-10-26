@@ -17,7 +17,6 @@ const LabResultBloodSchema = new Schema({
   MCHC:Number,
   RDW:Number,
   Platelet:Number,
-  Mean_Platelet_Volume:Number,
 });
 
 const LabResultBlood = mongoose.model("LabResultBlood", LabResultBloodSchema);

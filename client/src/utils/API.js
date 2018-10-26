@@ -1,11 +1,24 @@
 import axios from "axios";
+import { ftruncate } from "fs";
 
 
 export default {
 
+  //Lab Result for XRay test
+  getLabresultXRay: function(){
+    return axios.get("/api/XRay");
+  },
+
+
+  //Lab Result for Drug test
+  getLabresultDrug: function(){
+    return axios.get("/api/drug");
+  },
+  
+
   //Lab Result for Blood test
   getLabresultBlood:function(){
-      return axios.get("/api/Blood");
+      return axios.get("/api/blood");
   },
 
   postMessage: function(input) {
