@@ -1,5 +1,5 @@
 body {
-  background-image: url("https://www.stvincentsconsulting.com/img/img-480310816.jpg");
+  /* background-image: url("https://cdn.hipwallpaper.com/i/40/91/L1YQNU.jpg"); */
   height: 100%;
   width: 100%;
   background-position: center;
@@ -7,6 +7,14 @@ body {
   background-size: cover;
   background-attachment: fixed;
   text-align: center;
+}
+.header {
+  position: absolute;
+  left: 20px;
+}
+.header1 {
+  position: absolute;
+  right: 20px;
 }
 .button {
   background-color: #b2c675;
@@ -22,6 +30,16 @@ body {
   border-radius: 50%;
   font-family: Garamond;
 }
+a {
+  background-color: #b2c675;
+  border: solid darkgreen 2px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  font-family: Garamond;
+}
 #green-header {
   color: white;
   text-align: center;
@@ -29,8 +47,8 @@ body {
   border: solid darkgreen 2px;
   font-family: Garamond;
   padding-top: 4px;
-  margin-left: 275px;
-  margin-right: 275px;
+ margin-left: 350px;
+ margin-right: 350px;
 }
 #green-border {
   color: white;
@@ -57,6 +75,6 @@ body {
 
 .row-nav {
   height: 30 px;
-  padding-top: 50px;
+  /* padding-top: 50px; */
 
 }

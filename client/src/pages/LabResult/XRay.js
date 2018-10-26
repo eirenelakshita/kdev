@@ -21,7 +21,7 @@ class XRay extends Component{
       .then(res => 
         // console.log(res.data)
         this.setState({
-          XRayResult:          res.data[0]
+          XRayResult:res.data[0]
         })
         )
         .catch(err => console.log(err));

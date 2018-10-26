@@ -198,7 +198,17 @@ const doctorInfoSeed = [
   }
 ];
 
-
+db.Rx
+.remove({})
+.then(() => db.Rx.collection.insertMany(rxSeed))
+.then(data => {
+  console.log(data.result.n + " records inserted!");
+  process.exit(0);
+})
+.catch(err => {
+  console.error(err);
+  process.exit(1);
+});
 
 db.LabResult_XRay
   .remove({})
@@ -237,6 +247,8 @@ db.LabResult_Blood
     console.error(err);
     process.exit(1);
       });
+
+      
 
 db.Visit
   .remove({})
