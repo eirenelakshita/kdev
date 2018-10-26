@@ -3,6 +3,7 @@ import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import "./Messages.css";
 
 class Messages extends Component {
   state = {
@@ -12,16 +13,6 @@ class Messages extends Component {
     subject: "",
     synopsis: ""
   };
-
-  // componentDidMount() {
-  //   this.loadBooks();
-  // }
-
-  // loadBooks = () => {
-  //   API.getBooks()
-  //     .then(res => this.setState({ books: res.data }))
-  //     .catch(err => console.log(err));
-  // };
 
   // Handles updating component state when the user types into the input field
   handleInputChange = event => {
@@ -33,31 +24,29 @@ class Messages extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-        console.log("Button clicked!");
-        // axios.post('/api/messages', {}).then(console.log).catch(console.log);
-        if (this.state.sender && this.state.email) {
-          API.postMessage(
-            {
-              sender: this.state.sender,
-              email: this.state.email,
-              subject: this.state.subject,
-              body: this.state.body
-            }
-          )
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
+    console.log("Button clicked!");
+    // axios.post('/api/messages', {}).then(console.log).catch(console.log);
+    if (this.state.sender && this.state.email) {
+      API.postMessage(
+        {
+          sender: this.state.sender,
+          email: this.state.email,
+          subject: this.state.subject,
+          body: this.state.body
         }
+      )
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+    }
   };
 
 
   render() {
     return (
-      <Container fluid>
+      <Container id="messages-container">
         <Row>
           <Col size="md-6">
-            <Jumbotron>
-              <h1>Send a Message</h1>
-            </Jumbotron>
+            <h1>Send a Message</h1>
             <form>
               <Input
                 value={this.state.sender}
