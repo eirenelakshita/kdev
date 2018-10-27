@@ -1,6 +1,4 @@
 import React from 'react';
-// import { Link, Switch} from 'react-router-dom';
-// import { BrowserRouter as Router, Route } from "react-router-dom";
 import {Container , Row , Col , Button} from 'reactstrap';
 import Footer from '../../components/Footer';
 import './HomePage.css';
@@ -30,16 +28,11 @@ class HomePage extends React.Component {
 
             <div className="col-xs-8 col-sm-5 sidebar-offcanvas" id="sidebar">
               <div className="list-group">
-                <p></p>
-                    <Login whoiam={this.state.whoiam}/>
-                    {/* <a href="/Login"> Login in as Doctor</a>
-                    <a href="/Login"> Login in as Patient</a> */}
+                  <p></p>
+                  <Login whoiam={this.state.whoiam}/>
               </div>
             </div>
           </div>
-
-
-
 
         </Container>
         

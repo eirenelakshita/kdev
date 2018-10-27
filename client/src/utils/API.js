@@ -1,6 +1,4 @@
 import axios from "axios";
-import { ftruncate } from "fs";
-
 
 export default {
 
