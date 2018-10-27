@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { Container, Row, Col } from '../Grid';
-import {BrowserRouter as Router , Route , Link } from 'react-router-dom';
+import {BrowserRouter as Router , Route , Link , Switch, Redirect } from 'react-router-dom';
 import './navbar.css';
 import API from "../../utils/AuthAPI";
 import './navbar.css';
