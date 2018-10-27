@@ -44,7 +44,7 @@ class navbar extends Component {
             <Link to="/patients/visits" className="button">Visits</Link>
           </Col>
           <Col size="sm-3" style={{backgroundColor:"clear"}}>
-            <Link to="#" className="button">Log Out</Link>
+            <Link to="#" className="button" onClick={this.logout}>Log Out</Link>
           </Col>
         </Row>
       
