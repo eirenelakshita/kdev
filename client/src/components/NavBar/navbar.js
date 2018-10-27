@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { Container, Row, Col } from '../Grid';
+import {BrowserRouter as Router , Route , Link , Switch, Redirect } from 'react-router-dom';
+import './navbar.css';
 import API from "../../utils/AuthAPI";
 import './navbar.css';
+
 
 class navbar extends Component {
 
@@ -26,54 +28,54 @@ class navbar extends Component {
       )
     }
     return (
-      <Container fluid> 
-    
+      <Container fluid className="body">
+
         <Row id="row-nav">
           <Col size="sm-3" style={{backgroundColor:"clear"}}>
-            <a href="/patients" className="button">Patient Home</a>
+            <Link to="/patients" className="button">Patient Home</Link>
           </Col>
           <Col size="sm-2" id="col-right" style={{backgroundColor:"clear"}}>
-            <a href="/patients/messages" className="button">Messages</a>
+            <Link to="/patients/messages" className="button">Messages</Link>
           </Col>
           <Col size="sm-2" id="col-center" style={{backgroundColor:"clear"}}>
-            <a href="/patients/profile-info" className="button">Patient Info</a>
+            <Link to="/patients/profile-info" className="button">Patient Info</Link>
           </Col>
           <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
-            <a href="/patients/visits" className="button">Visits</a>
+            <Link to="/patients/visits" className="button">Visits</Link>
           </Col>
           <Col size="sm-3" style={{backgroundColor:"clear"}}>
-            <a href="#" className="button" onClick={this.logout}>Log Out</a>
+            <Link to="#" className="button">Log Out</Link>
           </Col>
         </Row>
       
         <Row id="row-nav">
           <Col size="sm-2" style={{backgroundColor:"clear"}} />
           <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
-            <a href="#" className="button">Calendar</a>
+            <Link to="#" className="button">Calendar</Link>
           </Col>
           <Col size="sm-2" style={{backgroundColor:"clear"}} />
           <Col size="sm-2" style={{backgroundColor:"clear"}} />
           <Col size="sm-2" id="col-right" style={{backgroundColor:"clear"}}>
-            <a href="/patients/lab-result" className="button">Lab Results</a>
+            <Link to="/patients/lab-result" className="button">Lab Results</Link>
           </Col>
           <Col size="sm-2" style={{backgroundColor:"clear"}} />
         </Row>
 
         <Row id="row-nav">
           <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
-            <a href="/patients/rx" className="button">Pharmacy</a>
+            <Link to="/patients/rx" className="button">Pharmacy</Link>
           </Col>
           <Col size="sm-2" style={{backgroundColor:"clear"}}>
-          <a>My Patient Portal</a>
+            <Link to="/patients" className="a">My Patient Portal</Link>
           </Col>
           <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
-            <a href="#" className="button">Cardiologist</a>
+            <Link to="/patients/Cardiologist" className="button">Cardiologist</Link>
           </Col>
         </Row>
-   
-      </Container>  
+      
+      </Container>
     )
   }
-};
+}
 
 export default navbar;

@@ -15,7 +15,7 @@ module.exports = app => {
         return cb(null, user);
       })
     })
-  )
+  );
 
   passport.serializeUser((user, cb) => cb(null, user._id));
 
@@ -29,7 +29,7 @@ module.exports = app => {
     }
     console.log("not authenticated");
     res.json({"isAuth": false});
-  }
+  };
 
 
   app.post("/login", passport.authenticate("local-patient-signin", {failureMessage: "not working"}), (req,res) => {
@@ -45,9 +45,5 @@ module.exports = app => {
   app.get("/logout", (req, res) => {
     req.logout();
     res.json({"logoutStatus": true});
-  })
-
-  // app.get("/tryme", (req, res) => {
-  //   res.json({"isAuth": true});
-  // });
+  });
 };

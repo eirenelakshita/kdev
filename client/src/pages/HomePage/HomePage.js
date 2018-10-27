@@ -13,8 +13,8 @@ class HomePage extends React.Component {
 
   render(){
     return(
-      <div>
-        <Container  >
+     <div>
+        <Container>
           <div className="row row-offcanvas row-offcanvas-right" >
             <div className="col-xs-10 col-sm-7">
                 <p></p>
@@ -38,7 +38,7 @@ class HomePage extends React.Component {
         
         <Footer />
      </div>
-    );
+    )
   }
 };
 

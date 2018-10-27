@@ -70,7 +70,8 @@ class Visits extends Component {
     return (
       <Container>
         <Row>
-          <Col size="md-6 sm-12">
+          <Col size="md-2 sm-2"></Col>
+          <Col size="md-8 sm-8">
             <Jumbotron>
               <h1>Previous Visits</h1>
             </Jumbotron>
@@ -109,6 +110,7 @@ class Visits extends Component {
                 <h3>No Results to Display</h3>
               )}
           </Col>
+          <Col size="md-2 sm-2"></Col>
         </Row>
       </Container>
     );
