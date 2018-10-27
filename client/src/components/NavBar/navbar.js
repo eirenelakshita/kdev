@@ -5,27 +5,19 @@ import './navbar.css';
 
 
 const navbar = () => (
-
- 
-    <Container fluid>
-    <header className="header">
-     <Link to="/patients" className="a">Patients Home</Link>
-    </header>
-
-    <header className="header1">
-      <Link to="#" className="a">Log Out</Link>
-    </header>
-
-       {/* <Row id="row-nav">
-         <Col size="sm-4" style={{backgroundColor:"clear"}} />
-         <Col size="sm-4" id="col-center" style={{backgroundColor:"clear"}}>
-           <a href="#" className="button">Primary Care</a>
-         </Col>
-         <Col size="sm-4" style={{backgroundColor:"clear"}} />
-       </Row> */}
-
-    <Row id="row-nav">
-        <Col size="sm-3" style={{backgroundColor:"clear"}} />
+  
+<Container fluid> 
+{/* <header className="button1">
+   <a href="/patients">Patients Home</a>
+ </header>
+ <header1 className="button2">
+ <a href="#">Log Out</a>
+ </header1> */}
+    
+      <Row id="row-nav">
+        <Col size="sm-3" style={{backgroundColor:"clear"}}>
+          <Link href="/patients" className="button">Patient Home</Link>
+        </Col>
         <Col size="sm-2" id="col-right" style={{backgroundColor:"clear"}}>
           <Link to="/patients/messages" className="button">Messages</Link>
         </Col>
@@ -35,11 +27,12 @@ const navbar = () => (
         <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
           <Link to="/patients/visits" className="button">Visits</Link>
         </Col>
-        <Col size="sm-3" style={{backgroundColor:"clear"}} />
-    </Row>
-
-
-    <Row id="row-nav">
+        <Col size="sm-3" style={{backgroundColor:"clear"}}>
+          <Link href="#" className="button">Log Out</Link>
+        </Col>
+      </Row>
+     
+      <Row id="row-nav">
         <Col size="sm-2" style={{backgroundColor:"clear"}} />
         <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
           <Link to="#" className="button">Calendar</Link>
@@ -57,12 +50,11 @@ const navbar = () => (
       <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
           <Link to="/patients/rx" className="button">Pharmacy</Link>
       </Col>
-         {/* <Col size="sm-2" style={{backgroundColor:"clear"}} /> */}
-         {/* <Col size="sm-1" style={{backgroundColor:"clear"}} /> */}
+       
       <Col size="sm-2" style={{backgroundColor:"clear"}}>
-        <Link to="/patients" className="a">⚕️ My Patient Portal ⚕️</Link>
+        <Link to="/patients" className="a">My Patient Portal</Link>
       </Col>
-         {/* <Col size="sm-2" style={{backgroundColor:"clear"}} /> */}
+     
       <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
           <Link to="/patients/Cardiologist" className="button">Cardiologist</Link>
       </Col>
@@ -74,7 +66,5 @@ const navbar = () => (
     </Container>
 
 );
-
-  
 
 export default navbar;

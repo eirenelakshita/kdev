@@ -71,24 +71,6 @@ class HomePage extends React.Component {
 
           <hr />
 
-      {/* <div>
-        <h1 className="text-center">{this.props.title}</h1>
-
-        <button name="doctor" 
-                className = "whoiam" 
-                onClick = {() => this.props.onclicked()} 
-                value="doctor"><Link to="/doctorLogIn"></Link>
-                I am Doctor
-        </button>
-
-        <button name="patient" 
-                className = "whoiam" 
-                onClick = {() => this.props.onclicked()} 
-                value="patient"><Link to="/patientLogIn"></Link>
-              I am Patient
-        </button>
-        
-      </div> */}
 
         </Container>
         
