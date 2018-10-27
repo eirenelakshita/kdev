@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 #color-col {
-  background-color: #FBF1B5
+  background-color: #FBF1B5 !important;
 }

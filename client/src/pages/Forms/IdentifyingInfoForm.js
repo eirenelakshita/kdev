@@ -33,7 +33,7 @@ class IdentifyingInfoForm extends PureComponent {
 
   render() {
     return (
-      <Container>
+      <Container id="color">
         <h1>{FormFields.header.title}</h1>
         <h4>{FormFields.header.subtext}</h4>
         <br />

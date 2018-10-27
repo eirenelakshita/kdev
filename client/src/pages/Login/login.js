@@ -95,7 +95,7 @@ export default class Login extends Component{
                   </div>
                 </form>
 
-                <div className  ="d-flex justify-content-center links">
+                <div className  ="d-flex justify-content-center" id="links">
                   Don't have an account?<Link to="/creatAccount">Sign Up</Link>
                 </div>
               </div>
