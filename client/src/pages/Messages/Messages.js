@@ -54,7 +54,8 @@ class Messages extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
+        <Col size="md-2 sm-2"></Col>
+        <Col size="md-8 sm-8">
             <Jumbotron>
               <h1>Send a Message</h1>
             </Jumbotron>
@@ -87,6 +88,7 @@ class Messages extends Component {
               </FormBtn>
             </form>
           </Col>
+          <Col size="md-2 sm-2"></Col>
         </Row>
       </Container>
     );

@@ -30,7 +30,7 @@ body {
   border-radius: 50%;
   font-family: Garamond;
 }
-a {
+.a {
   background-color: #b2c675;
   border: solid darkgreen 2px;
   padding-top: 10px;

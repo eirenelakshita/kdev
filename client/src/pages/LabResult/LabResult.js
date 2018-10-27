@@ -6,6 +6,7 @@ import LeftSide from './leftSide';
 import Blood from './Blood';
 import Drug from './Drug';
 import XRay from './XRay';
+// import { Col, Row, Container } from "../../components/Grid";
 
 
 
@@ -34,16 +35,17 @@ export default class LabResult extends Component{
 
   render(){
     return(
+      
       <div className="container" id="style">
-       <Row>
-         <Col xs="3"> 
-         <LeftSide
+      <Row>
+        <Col xs="3"> 
+        <LeftSide
           currentPage={this.state.currentPage}
           handlePageChange={this.handlePageChange}
-         />
-         </Col>
-         <Col xs="9">{this.state.currentPage ? this.renderPage():"Welcome to MY Lab Result Page"}</Col>
-       </Row>
+        />
+        </Col>
+        <Col xs="9">{this.state.currentPage ? this.renderPage():"Welcome to MY Lab Result Page"}</Col>
+      </Row>
       </div>
     )
   }

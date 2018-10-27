@@ -9,11 +9,11 @@ const navbar = () => (
  
     <Container fluid>
     <header className="header">
-      <Link to="/patients">Patients Home</Link>
+     <Link to="/patients" className="a">Patients Home</Link>
     </header>
 
     <header className="header1">
-      <Link to="#">Log Out</Link>
+      <Link to="#" className="a">Log Out</Link>
     </header>
 
        {/* <Row id="row-nav">
@@ -60,7 +60,7 @@ const navbar = () => (
          {/* <Col size="sm-2" style={{backgroundColor:"clear"}} /> */}
          {/* <Col size="sm-1" style={{backgroundColor:"clear"}} /> */}
       <Col size="sm-2" style={{backgroundColor:"clear"}}>
-        <Link to="/patients">⚕️ My Patient Portal ⚕️</Link>
+        <Link to="/patients" className="a">⚕️ My Patient Portal ⚕️</Link>
       </Col>
          {/* <Col size="sm-2" style={{backgroundColor:"clear"}} /> */}
       <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
