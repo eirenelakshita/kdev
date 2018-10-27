@@ -42,6 +42,11 @@ module.exports = app => {
     res.json({"isAuth": true});
   });
 
+  app.get("/logout", (req, res) => {
+    req.logout();
+    res.json({"logoutStatus": true});
+  })
+
   // app.get("/tryme", (req, res) => {
   //   res.json({"isAuth": true});
   // });
