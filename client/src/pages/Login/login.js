@@ -4,7 +4,7 @@ import {Container, Row ,Col} from "../../components/Grid/Container";
 // import Jumbotron from "../components/Jumbotron";
 // import {FormBtn , Input , TextArea } from "../components/Form";
 import "./Login.css";
-import API from '../../utils/API';
+import API from '../../utils/AuthAPI';
 
 
 export default class Login extends Component{
@@ -24,12 +24,12 @@ export default class Login extends Component{
   handleFormSubmit = event => {
     event.preventDefault();
     // alert(`Username: ${this.state.username}\nPassword: ${this.state.password}`);
-    this.setState({ username: "", password: "" });
     console.log("handle form works");
     API.patientLogin({ username: this.state.username, password: this.state.password})
       .then(res => {
         if (res.status === 200) {
           console.log(res.data);
+          this.setState({ username: "", password: "" });
         }
       })
       .catch(err => console.log(err)); //this is where we will tell user there has been an error

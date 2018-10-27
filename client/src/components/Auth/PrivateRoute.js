@@ -9,6 +9,7 @@ class PrivateRoute extends Component {
 
     this.state = {
       Component: props.component,
+      RenderComponent: props.render, 
       path: props.path
     }
   }
@@ -19,6 +20,7 @@ class PrivateRoute extends Component {
 
   authenticate = async () => {
     const response = await API.isAuthenticated();
+    console.log(response.data.isAuth)
     this.setState({ isAuth: response.data.isAuth })
   }
 
@@ -31,7 +33,7 @@ class PrivateRoute extends Component {
     return (
       <Route path={this.state.path} render={(props) => (
         this.state.isAuth 
-        ? <this.state.Component {...props} /> 
+        ? <this.state.RenderComponent {...props} /> 
         : <Redirect to={{
               pathname: '/',
               state: { from: props.location }

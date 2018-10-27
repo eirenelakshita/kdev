@@ -11,13 +11,6 @@ const navbar = () => (
  <header className="header1">
   <a href="#">Log Out</a>
  </header>
-      {/* <Row id="row-nav">
-        <Col size="sm-4" style={{backgroundColor:"clear"}} />
-        <Col size="sm-4" id="col-center" style={{backgroundColor:"clear"}}>
-          <a href="#" className="button">Primary Care</a>
-        </Col>
-        <Col size="sm-4" style={{backgroundColor:"clear"}} />
-      </Row> */}
     
       <Row id="row-nav">
         <Col size="sm-3" style={{backgroundColor:"clear"}} />

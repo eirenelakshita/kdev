@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PatientRouter from "./Routes/PatientRouter.js";
 import DoctorRouter from "./Routes/DoctorRouter.js";
 import PageNotFound from './pages/PageNotFound';
@@ -15,9 +15,9 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={HomePage} />
-            <Route path="/patients" render={props => <PatientRouter />} />
-            <Route path="/doctors" render={props => <DoctorRouter />} />
-            <PrivateRoute path="/test" component={Home} />
+            <PrivateRoute path="/patients" render={props => <PatientRouter />} />
+            <PrivateRoute path="/doctors" render={props => <DoctorRouter />} />
+            <PrivateRoute path="/test" render={props => <Home />} />
             <Route component={PageNotFound} />
           </Switch>
         </Router>

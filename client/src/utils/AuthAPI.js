@@ -1,6 +1,10 @@
 import axios from "axios";
 
 export default {
+
+  patientLogin: function(loginData) {
+    return axios.post("/login", loginData);
+  },
   isAuthenticated: function() {
     return axios.get("/isauth");
   },
@@ -11,4 +15,5 @@ export default {
   trymeTwo: function() {
     return axios.get("/tryme");
   }
-}
+
+};
