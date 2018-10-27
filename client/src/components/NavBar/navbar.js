@@ -5,12 +5,6 @@ import './navbar.css';
 const navbar = () => (
   
 <Container fluid> 
-{/* <header className="button1">
-   <a href="/patients">Patients Home</a>
- </header>
- <header1 className="button2">
- <a href="#">Log Out</a>
- </header1> */}
     
       <Row id="row-nav">
         <Col size="sm-3" style={{backgroundColor:"clear"}}>
@@ -48,7 +42,7 @@ const navbar = () => (
           <a href="patients/rx" className="button">Pharmacy</a>
         </Col>
         <Col size="sm-2" style={{backgroundColor:"clear"}}>
-        <a>My Patient Portal</a>
+        <a><strong>My Patient Portal</strong></a>
         </Col>
         <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
           <a href="#" className="button">Cardiologist</a>

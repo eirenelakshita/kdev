@@ -8,14 +8,7 @@ body {
   background-attachment: fixed;
   text-align: center;
 }
-/* .button1 {
-  position: absolute;
-  left: 20px;
-}
-.button2 {
-  position: absolute;
-  right: 20px;
-} */
+
 .button {
   background-color: #b2c675;
   border: solid darkgreen 2px;
@@ -29,6 +22,7 @@ body {
   border-radius: 50%;
   font-family: Garamond;
 }
+
 a {
   background-color: #b2c675;
   border: solid darkgreen 2px;
@@ -42,6 +36,7 @@ a {
   border-radius: 5px;
   font-family: Garamond;
 }
+
 #green-header {
   color: white;
   text-align: center;
@@ -52,6 +47,7 @@ a {
  margin-left: 350px;
  margin-right: 350px;
 }
+
 #green-border {
   color: white;
   text-align: center;
@@ -61,8 +57,8 @@ a {
   margin-left: 275px;
   margin-right: 275px;
   font-size: 20px;
-  
 }
+
 .col-center {
   text-align: center;
 }
