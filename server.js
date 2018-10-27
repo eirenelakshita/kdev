@@ -22,7 +22,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Add routes, both API and view
-require("./routes/authentication")(app);
+// require("./routes/authentication")(app);
 app.use(routes);
 
 // Connect to the Mongo DB

@@ -1,7 +1,8 @@
 #messages-container {
-  text-align: center
+  text-align: center;
+  background-color: red
 }
 
-body {
-  background-color: red
+#color-col {
+  background-color: #FBF1B5
 }
