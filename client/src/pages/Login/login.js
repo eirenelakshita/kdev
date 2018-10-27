@@ -26,10 +26,12 @@ export default class Login extends Component{
     // alert(`Username: ${this.state.username}\nPassword: ${this.state.password}`);
     this.setState({ username: "", password: "" });
     console.log("handle form works");
-    API.patientLogin({ username: this.state.username, password: this.state.password})
-      .then(res => {
-        console.log(res)
-      })
+    let objectPassed= {
+      username: this.state.username, password: this.state.password
+    };
+    API.patientLogin()
+      .then(req => console.log(req)
+      )
       .catch(err => console.log(err));
   };
 
