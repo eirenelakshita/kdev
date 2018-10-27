@@ -5,15 +5,17 @@ import './navbar.css';
 const navbar = () => (
   
 <Container fluid> 
-<header className="header">
+{/* <header className="button1">
    <a href="/patients">Patients Home</a>
  </header>
- <header className="header1">
-  <a href="#">Log Out</a>
- </header>
+ <header1 className="button2">
+ <a href="#">Log Out</a>
+ </header1> */}
     
       <Row id="row-nav">
-        <Col size="sm-3" style={{backgroundColor:"clear"}} />
+        <Col size="sm-3" style={{backgroundColor:"clear"}}>
+          <a href="/patients" className="button">Patient Home</a>
+        </Col>
         <Col size="sm-2" id="col-right" style={{backgroundColor:"clear"}}>
           <a href="patients/messages" className="button">Messages</a>
         </Col>
@@ -23,7 +25,9 @@ const navbar = () => (
         <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
           <a href="patients/visits" className="button">Visits</a>
         </Col>
-        <Col size="sm-3" style={{backgroundColor:"clear"}} />
+        <Col size="sm-3" style={{backgroundColor:"clear"}}>
+          <a href="#" className="button">Log Out</a>
+        </Col>
       </Row>
      
       <Row id="row-nav">
@@ -43,12 +47,9 @@ const navbar = () => (
         <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
           <a href="patients/rx" className="button">Pharmacy</a>
         </Col>
-        {/* <Col size="sm-2" style={{backgroundColor:"clear"}} /> */}
-        {/* <Col size="sm-1" style={{backgroundColor:"clear"}} /> */}
         <Col size="sm-2" style={{backgroundColor:"clear"}}>
-        <a>⚕️ My Patient Portal ⚕️</a>
+        <a>My Patient Portal</a>
         </Col>
-        {/* <Col size="sm-2" style={{backgroundColor:"clear"}} /> */}
         <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
           <a href="#" className="button">Cardiologist</a>
         </Col>
@@ -59,7 +60,5 @@ const navbar = () => (
  </Container>  
 
 );
-
-  
 
 export default navbar;
