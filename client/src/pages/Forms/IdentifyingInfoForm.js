@@ -9,8 +9,7 @@ class IdentifyingInfoForm extends PureComponent {
 
   state = {
     formData: {
-      email: "dummy",
-      password: "forNow"
+      
     }
   }
 
