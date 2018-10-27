@@ -4,7 +4,7 @@ import {Container, Row ,Col} from "../../components/Grid/Container";
 // import Jumbotron from "../components/Jumbotron";
 // import {FormBtn , Input , TextArea } from "../components/Form";
 import "./Login.css";
-import API from '../../utils/API';
+import API from '../../utils/AuthAPI';
 
 
 export default class Login extends Component{
@@ -24,20 +24,20 @@ export default class Login extends Component{
   handleFormSubmit = event => {
     event.preventDefault();
     // alert(`Username: ${this.state.username}\nPassword: ${this.state.password}`);
-    this.setState({ username: "", password: "" });
     console.log("handle form works");
-    let objectPassed= {
-      username: this.state.username, password: this.state.password
-    };
-    API.patientLogin()
-      .then(req => console.log(req)
-      )
-      .catch(err => console.log(err));
+    API.patientLogin({ username: this.state.username, password: this.state.password})
+      .then(res => {
+        if (res.status === 200) {
+          console.log(res.data);
+          this.setState({ username: "", password: "" });
+        }
+      })
+      .catch(err => console.log(err)); //this is where we will tell user there has been an error
   };
 
   render(){
     return(
-      <div id="test" style={{ backgroundImage: "url('https://www.stvincentsconsulting.com/img/img-480310816.jpg')" }}>
+      <div>
         <Container id="container">
           <div className="d-flex justify-content-center h-100">
             <div className="card">
@@ -45,11 +45,6 @@ export default class Login extends Component{
                 <p></p>
                 {/* <h3>{this.props.whoiam ? "Doctor Sign in" : "Patient Sign in"}</h3> */}
                 <h3>Sign in</h3>
-                <div className="d-flex justify-content-end social_icon">
-                  <span><i className="fab fa-facebook-square"></i></span>
-                  <span><i className="fab fa-google-plus-square"></i></span>
-                  <span><i className="fab fa-twitter-square"></i></span>
-                </div>
               </div>
 
               <div className="card-body">
@@ -82,10 +77,6 @@ export default class Login extends Component{
                     />
                   </div>
 
-                  <div className  ="row align-items-center remember">
-                    <input type="checkbox" />Remember Me
-                  </div>
-
                   <div className  ="form-group">
                       <button 
                         type="button" 
@@ -104,7 +95,7 @@ export default class Login extends Component{
                   </div>
                 </form>
 
-                <div className  ="d-flex justify-content-center links">
+                <div className  ="d-flex justify-content-center" id="links">
                   Don't have an account?<Link to="/creatAccount">Sign Up</Link>
                 </div>
               </div>

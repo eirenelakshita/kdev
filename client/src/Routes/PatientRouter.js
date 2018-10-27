@@ -20,7 +20,7 @@ class PatientRouter extends Component {
           <Route path="/patients/visits" component={Visits} />
           <Route path="/patients/rx" component={Rx} />
           <Route component={Home} />
-        </Switch>
+        </Switch>       
       </div>
     )
   }

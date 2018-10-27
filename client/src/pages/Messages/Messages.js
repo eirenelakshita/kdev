@@ -43,10 +43,11 @@ class Messages extends Component {
 
   render() {
     return (
-      <Container id="messages-container">
+
+  <Container id="messages-container">
         <Row>
-          <Col size="md-3"></Col>
-          <Col size="md-6" id="color-col">
+          <Col size="md-3 sm-3"></Col>
+          <Col size="md-6 sm-6" id="color-col">
             <h1>Send a Message</h1>
             <form>
               <Input
@@ -77,9 +78,11 @@ class Messages extends Component {
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-3"></Col>
-        </Row>
-      </Container>
+        
+        <Col size="sm-3 md-3"></Col>
+      </Row>
+    </Container>
+
     );
   }
 }

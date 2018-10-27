@@ -5,6 +5,58 @@ mongoose.connect(
   process.env.MONGODB_URI ||
   "mongodb://localhost/kdevproject"
 );
+
+
+const LabResultXRay = [
+{
+  First_Name:"Tom",
+  Last_Name: "Hello",
+  Time: Date.now,
+  Note:"Good",
+  URL:"https://www.verywellhealth.com/thmb/OqgFlM2ZWzgTRAxCX_iBpwkgkm0=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/iStock_22401848_MEDIUM-58262cb63df78c6f6adebb27.jpg",
+}
+]
+
+
+const LabResultDrug = [
+  {
+    First_Name: "Tom",
+	  Last_Name: "Hello",
+    Time: Date.now,
+    Alzheimers: 20,
+    Anglgesics: 30,
+    Asthma:55,
+    Depression:100,
+    Diabetes:66,
+    HIV:77,
+    Hypertension:99,
+  }
+];
+
+
+
+const LabResultBlood = [
+  {
+    First_Name: "Tom",
+	  Last_Name: "Hello",
+    Insurances: "Humana",
+    Time: Date.now,
+    Age: 50,
+    Gender: "Female",
+    WBC:6.9,
+    RBC:100,
+    HB:111,
+    HCT:222,
+    MCV:333,
+    MCH:444,
+    MCHC:555,
+    RDW:666,
+    Platelet:777,
+  }
+];
+
+
+
 const rxSeed = [
   {
   rx: "Gabapentin",
@@ -13,7 +65,7 @@ const rxSeed = [
 	rxInfo: "It is used to treat seizures. It is used to treat painful nerve diseases.",
   Time: Date.now
   }
-]
+];
 const visitSeed = [
   {
     patientID: "1001",
@@ -158,6 +210,46 @@ db.Rx
   process.exit(1);
 });
 
+db.LabResult_XRay
+  .remove({})
+  .then(() => db.LabResult_XRay.collection.insertMany(LabResultXRay))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+      })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+      });
+
+
+db.LabResult_Drug
+  .remove({})
+  .then(() => db.LabResult_Drug.collection.insertMany(LabResultDrug))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+      })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+      });
+
+
+db.LabResult_Blood
+  .remove({})
+  .then(() => db.LabResult_Blood.collection.insertMany(LabResultBlood))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+      })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+      });
+
+      
+
 db.Visit
   .remove({})
   .then(() => db.Visit.collection.insertMany(visitSeed))
@@ -173,6 +265,32 @@ db.Visit
 db.DoctorInfo
   .remove({})
   .then(() => db.DoctorInfo.collection.insertMany(doctorInfoSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+
+  // Patient Seeds
+
+  const patientSeed = [
+    {
+      username: "user1",
+      password: "password"
+    },
+    {
+      username: "user2",
+      password: "password"
+    }
+  ]
+
+  db.Patient
+  .remove({})
+  .then(() => db.Patient.collection.insertMany(patientSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
