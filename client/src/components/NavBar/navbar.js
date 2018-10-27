@@ -5,10 +5,11 @@ import API from "../../utils/AuthAPI";
 import './navbar.css';
 
 class navbar extends Component {
+
   state ={
     isLoggedOut: false
   }
-  
+
   logout = async () => {
     const response = await API.patientLogout();
     this.setState({ isLoggedOut: response.data.logoutStatus });
@@ -32,13 +33,13 @@ class navbar extends Component {
             <a href="/patients" className="button">Patient Home</a>
           </Col>
           <Col size="sm-2" id="col-right" style={{backgroundColor:"clear"}}>
-            <a href="patients/messages" className="button">Messages</a>
+            <a href="/patients/messages" className="button">Messages</a>
           </Col>
           <Col size="sm-2" id="col-center" style={{backgroundColor:"clear"}}>
             <a href="/patients/profile-info" className="button">Patient Info</a>
           </Col>
           <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
-            <a href="patients/visits" className="button">Visits</a>
+            <a href="/patients/visits" className="button">Visits</a>
           </Col>
           <Col size="sm-3" style={{backgroundColor:"clear"}}>
             <a href="#" className="button" onClick={this.logout}>Log Out</a>
@@ -60,7 +61,7 @@ class navbar extends Component {
 
         <Row id="row-nav">
           <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
-            <a href="patients/rx" className="button">Pharmacy</a>
+            <a href="/patients/rx" className="button">Pharmacy</a>
           </Col>
           <Col size="sm-2" style={{backgroundColor:"clear"}}>
           <a>My Patient Portal</a>
@@ -69,7 +70,7 @@ class navbar extends Component {
             <a href="#" className="button">Cardiologist</a>
           </Col>
         </Row>
-    
+   
       </Container>  
     )
   }
