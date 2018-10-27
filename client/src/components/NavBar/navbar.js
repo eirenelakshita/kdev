@@ -6,7 +6,7 @@ import './navbar.css';
 
 const navbar = () => (
   
-<Container fluid> 
+<Container fluid className="body">
 {/* <header className="button1">
    <a href="/patients">Patients Home</a>
  </header>
