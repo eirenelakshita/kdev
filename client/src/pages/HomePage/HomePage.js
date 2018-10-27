@@ -17,7 +17,7 @@ class HomePage extends React.Component {
   render(){
     return(
       <div style={{ backgroundColor: "white" }}>
-      <Nav />
+      {/* <Nav /> */}
         <Container  >
           <div className="row row-offcanvas row-offcanvas-right" >
             <div className="col-xs-10 col-sm-7">
@@ -38,11 +38,11 @@ class HomePage extends React.Component {
             </div>
           </div>
 
-          <div className="container-bar"></div>
+          {/* <div className="container-bar"></div> */}
           
           <br />
           
-          <div className="row row-offcanvas row-offcanvas-right">
+          {/* <div className="row row-offcanvas row-offcanvas-right">
             <div className="col-xs-12 col-lg-12">
               <h2>
                 Your Medical Records
@@ -67,7 +67,7 @@ class HomePage extends React.Component {
                 <p>say something here.</p>
                 <p><a className="btn btn-lg btn-primary" href="../../components/#navbar" role="button">See more</a></p>
             </div>
-          </div> 
+          </div>  */}
 
           <hr />
 

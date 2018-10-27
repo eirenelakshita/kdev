@@ -16,7 +16,7 @@ const navbar = () => (
     
       <Row id="row-nav">
         <Col size="sm-3" style={{backgroundColor:"clear"}}>
-          <Link href="/patients" className="button">Patient Home</Link>
+          <Link to="/patients" className="button">Patient Home</Link>
         </Col>
         <Col size="sm-2" id="col-right" style={{backgroundColor:"clear"}}>
           <Link to="/patients/messages" className="button">Messages</Link>
@@ -28,7 +28,7 @@ const navbar = () => (
           <Link to="/patients/visits" className="button">Visits</Link>
         </Col>
         <Col size="sm-3" style={{backgroundColor:"clear"}}>
-          <Link href="#" className="button">Log Out</Link>
+          <Link to="#" className="button">Log Out</Link>
         </Col>
       </Row>
      
