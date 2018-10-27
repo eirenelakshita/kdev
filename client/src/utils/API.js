@@ -1,7 +1,23 @@
 import axios from "axios";
 
-
 export default {
+
+  //Lab Result for XRay test
+  getLabresultXRay: function(){
+    return axios.get("/api/xRay");
+  },
+
+
+  //Lab Result for Drug test
+  getLabresultDrug: function(){
+    return axios.get("/api/drug");
+  },
+  
+
+  //Lab Result for Blood test
+  getLabresultBlood:function(){
+      return axios.get("/api/blood");
+  },
 
   postMessage: function(input) {
     return axios.post("/api/messages", input);
@@ -22,9 +38,5 @@ export default {
   },
   saveVisit: function(visitData) {
     return axios.post("/api/visits", visitData);
-  },
-
-  patientLogin: function(loginData) {
-    return axios.post("/login", loginData);
   }
 };

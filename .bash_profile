@@ -1,2 +1,0 @@
-. $HOME/.nvm/nvm.sh 
-
