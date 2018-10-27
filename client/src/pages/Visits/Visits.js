@@ -68,7 +68,7 @@ class Visits extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container>
         <Row>
           <Col size="md-6 sm-12">
             <Jumbotron>

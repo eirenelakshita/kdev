@@ -16,15 +16,17 @@ class HomePage extends React.Component {
 
   render(){
     return(
-      <div style={{ backgroundColor: "white" }}>
-      <Nav />
+      <div>
+       {/* <Nav /> */}
         <Container  >
           <div className="row row-offcanvas row-offcanvas-right" >
             <div className="col-xs-10 col-sm-7">
                 <p></p>
-                <div className="jumbotron jumbotronForHP">
-                    <h1>Health Cares</h1>
-                    <p>say something for those Images.</p>
+                <div className="jumbotron" style={{ backgroundColor: "rgba(40,40,40,0.8)" }}>
+                    <h1 style={{ color: "white" }}>Your Medical Records</h1>
+                    <p style={{ color: "white" }}>The Privacy Rule gives you, with few exceptions, the right to inspect, review, 
+                       and receive a copy of your medical records and billing 
+                       records that are held by health plans and health care providers covered by the Privacy Rule.</p>
                 </div>
             </div>
 
@@ -38,7 +40,7 @@ class HomePage extends React.Component {
             </div>
           </div>
 
-          <div className="container-bar"></div>
+          {/* <div className="container-bar"></div>
           
           <br />
           
@@ -69,7 +71,7 @@ class HomePage extends React.Component {
             </div>
           </div> 
 
-          <hr />
+          <hr /> */}
 
       {/* <div>
         <h1 className="text-center">{this.props.title}</h1>
@@ -93,7 +95,7 @@ class HomePage extends React.Component {
         </Container>
         
         <Footer />
-      </div>
+     </div>
     );
   }
 };

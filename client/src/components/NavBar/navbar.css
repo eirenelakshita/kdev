@@ -8,14 +8,7 @@ body {
   background-attachment: fixed;
   text-align: center;
 }
-/* .button1 {
-  position: absolute;
-  left: 20px;
-}
-.button2 {
-  position: absolute;
-  right: 20px;
-} */
+
 .button {
   background-color: #b2c675;
   border: solid darkgreen 2px;
