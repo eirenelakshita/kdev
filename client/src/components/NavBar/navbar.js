@@ -5,12 +5,12 @@ import './navbar.css';
 const navbar = () => (
   
 <Container fluid> 
-<header class="header">
+<header className="header">
    <a href="/patients">Patients Home</a>
  </header>
- <header1 className="header1">
- <a href="#">Log Out</a>
- </header1>
+ <header className="header1">
+  <a href="#">Log Out</a>
+ </header>
       {/* <Row id="row-nav">
         <Col size="sm-4" style={{backgroundColor:"clear"}} />
         <Col size="sm-4" id="col-center" style={{backgroundColor:"clear"}}>
