@@ -1,0 +1,57 @@
+{
+  "header": {
+    "title": "Identifying Information",
+    "subtext": "Please fill out the information below to begin building your patient profile."
+  },
+  "sections": [
+    { "sectionheader": "Visit Information",
+      "rows": [
+        {"cols": [
+          { "size": "md-4", "fieldName": "Last Name", "required": "true" },
+          { "size": "md-2", "fieldName": "Mid Init" },
+          { "size": "md-4", "fieldName": "First Name", "required": "true" },
+          { "size": "md-2", "fieldName": "Suffix/Prefix" }
+        ]}
+      ]
+    },
+    { "sectionheader": "Address",
+      "rows": [
+        {"cols": [
+          { "size": "md-6", "fieldName": "Street Address", "required": "true" },
+          { "size": "md-6", "fieldName": "Address Line 2" }
+        ]},
+        {"cols": [
+          { "size": "md-6", "fieldName": "City", "required": "true" },
+          { "size": "md-2", "fieldName": "State", "format": "XX", "required": "true" },
+          { "size": "md-4", "fieldName": "Zip Code", "required": "true" }
+        ]}
+      ]
+    },
+    { "sectionheader": "Other",
+      "rows": [
+        {"cols": [
+          { "size": "md-4", "fieldName": "Phone Number", "format": "xxx-xxx-xxxx", "required": "true" },
+          { "size": "md-4", "fieldName": "Date of Birth", "format": "MM/DD/YYYY", "required": "true" },
+          { "size": "md-4", "fieldName": "Social Security Number", "format": "xxx-xx-xxxx", "required": "true" }
+        ]},
+        {"cols": [
+          { "size": "md-4", "fieldName": "Sex", "required": "true" },
+          { "size": "md-8", "fieldName": "Marital Status", "required": "true" }
+        ]},
+        {"cols": [
+          { "size": "md-6", "fieldName": "Race", "required": "true" },
+          { "size": "md-6", "fieldName": "Ethnicity", "required": "true" }
+        ]}
+      ]
+    },
+    { "sectionheader": "Emergency Contact",
+      "rows": [
+        {"cols": [
+          { "size": "md-4", "fieldName": "Contact Name", "required": "true" },
+          { "size": "md-4", "fieldName": "Contact Relationship", "required": "true" },
+          { "size": "md-4", "fieldName": "Contact Phone Number", "required": "true" }
+        ]}
+      ]
+    }
+  ]
+}

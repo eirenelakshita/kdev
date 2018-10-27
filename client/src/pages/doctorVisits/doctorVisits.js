@@ -1,12 +1,13 @@
-import React, { Component } from "react";
-import Jumbotron from "../../components/Jumbotron";
+import React, { PureComponent } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
+import FormAPI from "../../utils/FormAPI";
+import FormFields from "./doctorVisitsForm.json";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+import { Input, Select, TextArea, FormBtn } from "../../components/Form";
 
-class DoctorVisits extends Component {
+class DoctorVisits extends PureComponent {
   // Setting our component's initial state
   state = {
     visits: [],
@@ -72,7 +73,32 @@ class DoctorVisits extends Component {
         <Row>
           <Col size="md-6">
               <h1>New Visit</h1>
-            <h2>Form</h2>
+              <br />
+        <form id="identifyingInfoForm">
+          {FormFields.sections.map((section, sindex) => (
+            <div key={`section${sindex}`}>
+              <h1 className="form-section-header">{section.sectionheader}</h1>
+              <hr className="section-header-underline" />
+              <div className="form-section" >
+                {section.rows.map((row, rindex) => (
+                  <Row key={`section${sindex}-row${rindex}`}>
+                    {row.cols.map((col, cindex) => (
+                      <Col size={col.size} key={`section${sindex}-row${rindex}-col${cindex}`}>
+                        <Input 
+                          label={col.fieldName}
+                          name={col.fieldName.split(/\s|\//).map((word, index) => word = (index === 0) ? word.toLowerCase() : word ).join("")}
+                          onChange={this.handleInputChange}
+                          required={col.required ? true : false}
+                        />
+                      </Col>
+                    ))}
+                  </Row>
+                ))}
+              </div>
+            </div>
+          ))}
+          <FormBtn onClick={this.handleSubmit} type="submit">Submit</FormBtn>
+        </form>
           </Col>
           <Col size="md-6 sm-12">
               <h1>Previous Visits</h1>
