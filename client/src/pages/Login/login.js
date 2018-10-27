@@ -37,7 +37,7 @@ export default class Login extends Component{
 
   render(){
     return(
-      <div id="test" style={{ backgroundImage: "url('https://www.stvincentsconsulting.com/img/img-480310816.jpg')" }}>
+      <div>
         <Container id="container">
           <div className="d-flex justify-content-center h-100">
             <div className="card">
@@ -45,11 +45,6 @@ export default class Login extends Component{
                 <p></p>
                 {/* <h3>{this.props.whoiam ? "Doctor Sign in" : "Patient Sign in"}</h3> */}
                 <h3>Sign in</h3>
-                <div className="d-flex justify-content-end social_icon">
-                  <span><i className="fab fa-facebook-square"></i></span>
-                  <span><i className="fab fa-google-plus-square"></i></span>
-                  <span><i className="fab fa-twitter-square"></i></span>
-                </div>
               </div>
 
               <div className="card-body">
@@ -80,10 +75,6 @@ export default class Login extends Component{
                       value={this.state.password}
                       onChange={this.handleInputChange}
                     />
-                  </div>
-
-                  <div className  ="row align-items-center remember">
-                    <input type="checkbox" />Remember Me
                   </div>
 
                   <div className  ="form-group">

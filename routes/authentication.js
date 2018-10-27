@@ -19,13 +19,30 @@ module.exports = app => {
 
   passport.serializeUser((user, cb) => cb(null, user._id));
 
-  passport.deserializeUser((id, cb) => {
-    db.Patient.findById({ id }).then(user => cb(null, user));
+  passport.deserializeUser((_id, cb) => {
+    db.Patient.findById({ _id }).then(user => cb(null, user));
   });
+
+  function ensureAuthenticated (req, res, next) {
+    if (req.isAuthenticated()) { 
+        return next();
+    }
+    console.log("not authenticated");
+    res.json({"isAuth": false});
+  }
 
 
   app.post("/login", passport.authenticate("local-patient-signin"), (req,res) => {
     console.log(req.body);
     res.json({"field": "hi"});
   });
+
+  app.get("/isauth", ensureAuthenticated, (req, res) => {
+    console.log("auth: " + req.user);
+    res.json({"isAuth": true});
+  });
+
+  // app.get("/tryme", (req, res) => {
+  //   res.json({"isAuth": true});
+  // });
 };
