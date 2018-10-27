@@ -1,19 +1,38 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { Container, Row, Col } from '../Grid';
 import {BrowserRouter as Router , Route , Link } from 'react-router-dom';
 import './navbar.css';
+import API from "../../utils/AuthAPI";
+import './navbar.css';
 
 
-const navbar = () => (
+
+class navbar extends Component {
+  state ={
+    isLoggedOut: false
+  }
   
+  logout = async () => {
+    const response = await API.patientLogout();
+    this.setState({ isLoggedOut: response.data.logoutStatus });
+  }
+
+  render() {
+    if (this.state.isLoggedOut) {
+      return (
+        <Redirect to={{
+          pathname: '/',
+          state: { from: this.props.location }
+          }} 
+        /> 
+      )
+    }
+    return (
+
+
 <Container fluid className="body">
-{/* <header className="button1">
-   <a href="/patients">Patients Home</a>
- </header>
- <header1 className="button2">
- <a href="#">Log Out</a>
- </header1> */}
-    
+
       <Row id="row-nav">
         <Col size="sm-3" style={{backgroundColor:"clear"}}>
           <Link to="/patients" className="button">Patient Home</Link>
@@ -64,7 +83,8 @@ const navbar = () => (
     
     
     </Container>
-
-);
+    )
+  }
+  }
 
 export default navbar;

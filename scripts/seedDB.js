@@ -273,3 +273,29 @@ db.DoctorInfo
     console.error(err);
     process.exit(1);
   });
+
+
+  // Patient Seeds
+
+  const patientSeed = [
+    {
+      username: "user1",
+      password: "password"
+    },
+    {
+      username: "user2",
+      password: "password"
+    }
+  ]
+
+  db.Patient
+  .remove({})
+  .then(() => db.Patient.collection.insertMany(patientSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });

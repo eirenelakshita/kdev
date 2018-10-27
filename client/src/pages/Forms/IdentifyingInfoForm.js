@@ -9,8 +9,7 @@ class IdentifyingInfoForm extends PureComponent {
 
   state = {
     formData: {
-      email: "dummy",
-      password: "forNow"
+      
     }
   }
 
@@ -22,7 +21,7 @@ class IdentifyingInfoForm extends PureComponent {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state.formData);
+    console.log(this.state);
     FormAPI.submitForm(this.state.formData)
       .then(res => {
         console.log(res);

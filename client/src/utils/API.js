@@ -40,9 +40,5 @@ export default {
   },
   saveVisit: function(visitData) {
     return axios.post("/api/visits", visitData);
-  },
-
-  patientLogin: function(loginData) {
-    return axios.post("/login", loginData);
   }
 };
