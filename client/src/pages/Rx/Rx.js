@@ -70,8 +70,8 @@ class Rx extends Component {
                       <Row>
                         <Col size="3" />
                         <Col size="9">
-                          <p>Notes: {rx.rx} ({rx.rxInfo})</p>
-                          
+                          <p>Notes: {rx.drugInfo}</p>
+                          {/* <p>Prescription: {rx.Prescription}</p> */}
                         </Col>
                       </Row>
                       <DeleteBtn onClick={() => this.deleteRx(rx._id)} />
