@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
+import {BrowserRouter as Router , Route , Link , Switch, Redirect } from 'react-router-dom';
 import {Container, Row ,Col} from "../../components/Grid/Container";
-// import Jumbotron from "../components/Jumbotron";
-// import {FormBtn , Input , TextArea } from "../components/Form";
 import "./Login.css";
 import API from '../../utils/AuthAPI';
 
@@ -11,7 +9,8 @@ export default class Login extends Component{
 
   state = {
     username: "",
-    password: ""
+    password: "",
+    isLoggedIn: false
   };
 
   handleInputChange = event => {
@@ -23,19 +22,26 @@ export default class Login extends Component{
 
   handleFormSubmit = event => {
     event.preventDefault();
-    // alert(`Username: ${this.state.username}\nPassword: ${this.state.password}`);
-    console.log("handle form works");
     API.patientLogin({ username: this.state.username, password: this.state.password})
       .then(res => {
         if (res.status === 200) {
           console.log(res.data);
-          this.setState({ username: "", password: "" });
+          this.setState({ username: "", password: "", isLoggedIn: true });
         }
       })
       .catch(err => console.log(err)); //this is where we will tell user there has been an error
   };
 
   render(){
+    if (this.state.isLoggedIn) {
+      return (
+        <Redirect to={{
+          pathname: '/patients',
+          state: { from: this.props.location }
+          }} 
+        /> 
+      )
+    }
     return(
       <div>
         <Container id="container">
@@ -43,7 +49,6 @@ export default class Login extends Component{
             <div className="card">
               <div className="card-header">
                 <p></p>
-                {/* <h3>{this.props.whoiam ? "Doctor Sign in" : "Patient Sign in"}</h3> */}
                 <h3>Sign in</h3>
               </div>
 
