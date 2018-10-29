@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom'
 import {Row ,Col} from "reactstrap";
 import './LabResult.css';
 import LeftSide from './leftSide';
 import Blood from './Blood';
 import Drug from './Drug';
 import XRay from './XRay';
-// import { Col, Row, Container } from "../../components/Grid";
-
-
 
 
 export default class LabResult extends Component{

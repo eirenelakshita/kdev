@@ -1,15 +1,11 @@
 import React from 'react';
-import {Container , Row , Col , Button} from 'reactstrap';
+import { Container } from 'reactstrap';
 import Footer from '../../components/Footer';
 import './HomePage.css';
 import Login from '../Login';
 
 
 class HomePage extends React.Component {
-
-  state = {
-    whoiam:"",
-  };
 
   render(){
     return(
@@ -29,7 +25,7 @@ class HomePage extends React.Component {
             <div className="col-xs-8 col-sm-5 sidebar-offcanvas" id="sidebar">
               <div className="list-group">
                   <p></p>
-                  <Login whoiam={this.state.whoiam}/>
+                  <Login />
               </div>
             </div>
           </div>

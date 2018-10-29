@@ -2,6 +2,9 @@ import axios from "axios";
 
 export default {
 
+  patientCreateAccount: function(accountData) {
+    return axios.post("/createaccount", accountData);
+  },
   patientLogin: function(loginData) {
     return axios.post("/login", loginData);
   },
@@ -11,5 +14,5 @@ export default {
   isAuthenticated: function() {
     return axios.get("/isauth");
   }
-  
+
 };

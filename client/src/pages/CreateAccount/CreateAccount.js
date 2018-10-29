@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import {Container} from "../../components/Grid/Container";
-import "./Login.css";
+import "./CreateAccount.css";
 import API from '../../utils/AuthAPI';
 
 
@@ -10,7 +10,7 @@ export default class Login extends Component{
   state = {
     username: "",
     password: "",
-    isLoggedIn: false
+    accountCreated: false
   };
 
   handleInputChange = event => {
@@ -22,18 +22,17 @@ export default class Login extends Component{
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.patientLogin({ username: this.state.username, password: this.state.password})
+    API.patientCreateAccount({ username: this.state.username, password: this.state.password})
       .then(res => {
         if (res.status === 200) {
-          console.log(res.data);
-          this.setState({ username: "", password: "", isLoggedIn: true });
+          this.setState({ accountCreated: true })
         }
       })
       .catch(err => console.log(err)); //this is where we will tell user there has been an error
   };
 
   render(){
-    if (this.state.isLoggedIn) {
+    if (this.state.accountCreated) {
       return (
         <Redirect to={{
           pathname: '/patients',
@@ -49,7 +48,7 @@ export default class Login extends Component{
             <div className="card">
               <div className="card-header">
                 <p></p>
-                <h3>Sign in</h3>
+                <h3>Create Account</h3>
               </div>
 
               <div className="card-body">
@@ -101,7 +100,7 @@ export default class Login extends Component{
                 </form>
 
                 <div className  ="d-flex justify-content-center" id="links">
-                  Don't have an account? &nbsp; <Link to="/createAccount">Sign Up</Link>
+                  Already have an account? &nbsp; <Link to="/">Sign In</Link>
                 </div>
               </div>
             </div>
@@ -111,4 +110,3 @@ export default class Login extends Component{
     );
   }
 };
-
