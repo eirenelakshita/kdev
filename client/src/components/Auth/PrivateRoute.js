@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import API from "../../utils/AuthAPI";
 
 
@@ -20,7 +20,6 @@ class PrivateRoute extends Component {
 
   authenticate = async () => {
     const response = await API.isAuthenticated();
-    console.log(response.data.isAuth)
     this.setState({ isAuth: response.data.isAuth })
   }
 

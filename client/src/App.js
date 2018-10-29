@@ -4,7 +4,7 @@ import PatientRouter from "./Routes/PatientRouter.js";
 import DoctorRouter from "./Routes/DoctorRouter.js";
 import PageNotFound from './pages/PageNotFound';
 import HomePage from './pages/HomePage';
-import Home from './pages/Home';
+import CreateAccount from "./pages/CreateAccount";
 import PrivateRoute from "./components/Auth";
 
 
@@ -15,9 +15,9 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={HomePage} />
+            <Route path="/createAccount" component={CreateAccount} />
             <PrivateRoute path="/patients" render={props => <PatientRouter />} />
             <PrivateRoute path="/doctors" render={props => <DoctorRouter />} />
-            <PrivateRoute path="/test" render={props => <Home />} />
             <Route component={PageNotFound} />
           </Switch>
         </Router>

@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const patientProfileSchema = new Schema({
+  patientID: {
+    type: Schema.Types.ObjectId,
+    ref: "Patient"
+  },
   lastName: {type: String, required: true, trim: true},
   midInit: {type: String, maxLength: 1, trim: true},
   firstName: {type: String, required: true, trim: true},

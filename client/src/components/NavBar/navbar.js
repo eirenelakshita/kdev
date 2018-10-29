@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from '../Grid';
-import {BrowserRouter as Router , Route , Link , Switch, Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './navbar.css';
 import API from "../../utils/AuthAPI";
-import './navbar.css';
 
 
 class navbar extends Component {
@@ -28,35 +27,31 @@ class navbar extends Component {
       )
     }
     return (
-      <Container fluid className="body">
+      <Container fluid className="navbar-container">
 
         <Row id="row-nav">
-          <Col size="sm-3" style={{backgroundColor:"clear"}}>
-            <Link to="/patients" className="button">Patient Home</Link>
-          </Col>
+          <Col size="sm-3" style={{backgroundColor:"clear"}} />
           <Col size="sm-2" id="col-right" style={{backgroundColor:"clear"}}>
-            <Link to="/patients/messages" className="button">Messages</Link>
+            <Link to="/patients/lab-result" className="button">Lab Results</Link>
           </Col>
           <Col size="sm-2" id="col-center" style={{backgroundColor:"clear"}}>
-            <Link to="/patients/profile-info" className="button">Patient Info</Link>
+            <Link to="/patients" className="button">Patient Home</Link>
           </Col>
           <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
-            <Link to="/patients/visits" className="button">Visits</Link>
+            <Link to="/patients/profile-info" className="button">Patient Info</Link>
           </Col>
-          <Col size="sm-3" style={{backgroundColor:"clear"}}>
-            <Link to="#" className="button" onClick={this.logout}>Log Out</Link>
-          </Col>
+          <Col size="sm-3" style={{backgroundColor:"clear"}} />
         </Row>
       
         <Row id="row-nav">
           <Col size="sm-2" style={{backgroundColor:"clear"}} />
           <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
-            <Link to="#" className="button">Calendar</Link>
+            <Link to="/patients/visits" className="button">Visits</Link>
           </Col>
           <Col size="sm-2" style={{backgroundColor:"clear"}} />
           <Col size="sm-2" style={{backgroundColor:"clear"}} />
           <Col size="sm-2" id="col-right" style={{backgroundColor:"clear"}}>
-            <Link to="/patients/lab-result" className="button">Lab Results</Link>
+            <Link to="/patients/messages" className="button">Messages</Link>
           </Col>
           <Col size="sm-2" style={{backgroundColor:"clear"}} />
         </Row>
@@ -66,10 +61,10 @@ class navbar extends Component {
             <Link to="/patients/rx" className="button">Pharmacy</Link>
           </Col>
           <Col size="sm-2" style={{backgroundColor:"clear"}}>
-            <Link to="/patients" className="a">My Patient Portal</Link>
+            <h2 className="a">My Patient Portal</h2>
           </Col>
           <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
-            <Link to="/patients/Cardiologist" className="button">Cardiologist</Link>
+            <Link to="#" className="button" onClick={this.logout}>Log Out</Link>
           </Col>
         </Row>
       
