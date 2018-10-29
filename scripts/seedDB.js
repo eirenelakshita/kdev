@@ -6,17 +6,15 @@ mongoose.connect(
   "mongodb://localhost/kdevproject"
 );
 
-
 const LabResultXRay = [
-{
-  First_Name:"Tom",
-  Last_Name: "Hello",
-  Time: Date.now,
-  Note:"Good",
-  URL:"https://www.verywellhealth.com/thmb/OqgFlM2ZWzgTRAxCX_iBpwkgkm0=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/iStock_22401848_MEDIUM-58262cb63df78c6f6adebb27.jpg",
-}
-]
-
+  {
+    First_Name:"Tom",
+    Last_Name: "Hello",
+    Time: Date.now,
+    Note:"Good",
+    URL:"https://www.verywellhealth.com/thmb/OqgFlM2ZWzgTRAxCX_iBpwkgkm0=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/iStock_22401848_MEDIUM-58262cb63df78c6f6adebb27.jpg",
+  }
+];
 
 const LabResultDrug = [
   {
@@ -32,8 +30,6 @@ const LabResultDrug = [
     Hypertension:99,
   }
 ];
-
-
 
 const LabResultBlood = [
   {
@@ -55,8 +51,6 @@ const LabResultBlood = [
   }
 ];
 
-
-
 const rxSeed = [
   {
   rx: "Gabapentin",
@@ -66,6 +60,7 @@ const rxSeed = [
   Time: Date.now
   }
 ];
+
 const visitSeed = [
   {
     patientID: "1001",

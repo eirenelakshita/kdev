@@ -6,16 +6,26 @@ const db = require("../models");
 module.exports = app => {
   passport.use("local-patient-signin", new Strategy(
     (username, password, cb) => {
-      console.log("hello", username, password);
-      db.Patient.findOne({ username: username }).then((user) => {
+      db.Patient.findOne({ username: username }).then(user => {
         if (!user) return cb(null, false);
         if (user.password !== password) return cb (null, false);
 
-        console.log("user:", user);
         return cb(null, user);
       })
     })
   );
+
+  passport.use("local-patient-create", new Strategy(
+    (username, password, cb) => {
+      db.Patient.findOne({ username: username }).then(user => {
+        if (user) return cb(null, false);
+        
+        db.Patient.create({ username: username, password: password }).then(newUser => {
+          return cb(null, newUser);
+        })
+      })
+    }
+  ));
 
   passport.serializeUser((user, cb) => cb(null, user._id));
 
@@ -32,13 +42,15 @@ module.exports = app => {
   };
 
 
+  app.post("/createaccount", passport.authenticate("local-patient-create", {failureMessage: "Please try again."}), (req, res) => {
+    res.json({"accountCreated": true});
+  });
+
   app.post("/login", passport.authenticate("local-patient-signin", {failureMessage: "not working"}), (req,res) => {
-    console.log(req.body);
     res.json({"field": "hi"});
   });
 
   app.get("/isauth", ensureAuthenticated, (req, res) => {
-    console.log("auth: " + req.user);
     res.json({"isAuth": true});
   });
 

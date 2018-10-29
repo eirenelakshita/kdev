@@ -4,7 +4,7 @@ import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+
 
 class Visits extends Component {
   // Setting our component's initial state
@@ -43,29 +43,6 @@ class Visits extends Component {
       .catch(err => console.log(err));
   };
 
-  // Handles updating component state when the user types into the input field
-  // handleInputChange = event => {
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
-
-  // When the form is submitted, use the API.saveBook method to save the visit data
-  // Then reload visits from the database
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   if (this.state.Doctor_Speciality && this.state.Prescription) {
-  //     API.saveBook({
-  //       Doctor_Speciality: this.state.Doctor_Speciality,
-  //       Prescription: this.state.Prescription,
-  //       Diagnosis: this.state.Diagnosis
-  //     })
-  //       .then(res => this.loadVisits())
-  //       .catch(err => console.log(err));
-  //   }
-  // };
-
   render() {
     return (
       <Container>
@@ -81,7 +58,6 @@ class Visits extends Component {
                   let choppedDate = this.chopDate(visit.Time);
                   return (
                     <ListItem key={visit._id}>
-                      {/* <a href={"/visits/" + visit._id}>Visit</a> */}
                       <Row>
                         <Col size="3">
                           <h5><strong>

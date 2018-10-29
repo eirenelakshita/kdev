@@ -9,6 +9,10 @@ body {
   text-align: center;
 }
 
+.navbar-container {
+  margin-bottom: 2em;
+}
+
 .button {
   background-color: #b2c675;
   border: solid darkgreen 2px;
