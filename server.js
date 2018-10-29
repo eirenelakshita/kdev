@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3001;
 
 const mongoose = require("mongoose");
 const db = require("./models");
+const passport = require("passport");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -14,7 +15,14 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+// Passport
+app.use(require("cookie-parser")());
+app.use(require("express-session")({ secret: 'password', resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Add routes, both API and view
+require("./routes/authentication")(app);
 app.use(routes);
 
 // Connect to the Mongo DB

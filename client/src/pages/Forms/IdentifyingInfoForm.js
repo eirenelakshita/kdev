@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { Container, Row, Col } from "../../components/Grid";
-import { Input, Select, FormBtn } from "../../components/Form";
+import { Input, FormBtn } from "../../components/Form";
 import FormAPI from "../../utils/FormAPI";
 import FormFields from "./identifyinginfo.json";
 import "./IdentifyingInfoForm.css";
@@ -8,33 +8,49 @@ import "./IdentifyingInfoForm.css";
 class IdentifyingInfoForm extends PureComponent {
 
   state = {
-    formData: {
-      email: "dummy",
-      password: "forNow"
-    }
+    formData: {},
+    existingProfile: false,
+    id: null
+  }
+
+  componentDidMount() {
+    FormAPI.getCurrentData()
+      .then(res => {
+        console.log(res)
+        if (res.data[0]._id) {
+          this.setState({ existingProfile: true, id: res.data[0]._id })
+        }
+      })
   }
 
   handleInputChange = event => {
     let { name, value } = event.target;
-    // name = name.replace(/\//g, "");
     this.setState({ formData: { ...this.state.formData, [name]: value.trim() }});
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state.formData);
-    FormAPI.submitForm(this.state.formData)
-      .then(res => {
-        console.log(res);
-        document.getElementById("identifyingInfoForm").reset();
-        this.setState({ formData: { email: "dummy", password: "forNow" } })
-      })
-      .catch(err => console.log(err))
+
+    if (this.state.existingProfile === true) {
+      FormAPI.updateForm(this.state.id, this.state.formData)
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => console.log(err))
+    }
+    else {
+      FormAPI.submitForm(this.state.formData)
+        .then(res => {
+          document.getElementById("identifyingInfoForm").reset();
+          this.setState({ formData: "" })
+        })
+        .catch(err => console.log(err))
+    }
   }
 
   render() {
     return (
-      <Container>
+      <Container id="color">
         <h1>{FormFields.header.title}</h1>
         <h4>{FormFields.header.subtext}</h4>
         <br />

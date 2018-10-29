@@ -1,61 +1,76 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Container, Row, Col } from '../Grid';
+import { Link, Redirect } from 'react-router-dom';
 import './navbar.css';
+import API from "../../utils/AuthAPI";
 
-const navbar = () => (
-  
-<Container fluid>
-  <Row>
-    <Col size="sm-4" style={{backgroundColor:"clear"}} />
-    <Col size="sm-4" id="col-center" style={{backgroundColor:"clear"}}>
-      <a href="#" className="button">Primary Care</a>
-    </Col>
-    <Col size="sm-4" style={{backgroundColor:"clear"}} />
-  </Row>
-    
-  <Row>
-    <Col size="sm-3" style={{backgroundColor:"clear"}} />
-    <Col size="sm-3" id="col-right" style={{backgroundColor:"clear"}}>
-      <a href="#" className="button">Dentist</a>
-    </Col>
-    <Col size="sm-3" id="col-left" style={{backgroundColor:"clear"}}>
-      <a href="#" className="button">Optometry</a>
-    </Col>
-    <Col size="sm-3" style={{backgroundColor:"clear"}} />
-  </Row>
-     
-  <Row>
-    <Col size="sm-2" style={{backgroundColor:"clear"}} />
-    <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
-      <a href="#" className="button">Specialist</a>
-    </Col>
-    <Col size="sm-2" style={{backgroundColor:"clear"}} />
-    <Col size="sm-2" style={{backgroundColor:"clear"}} />
-    <Col size="sm-2" id="col-right" style={{backgroundColor:"clear"}}>
-      <a href="#" className="button">Dermatologist</a>
-    </Col>
-    <Col size="sm-2" style={{backgroundColor:"clear"}} />
-  </Row>
 
-  <Row>
-    <Col size="sm-4" id="col-center" style={{backgroundColor:"clear"}}>
-      <a href="#" className="button">Pharmacy</a>
-    </Col>
-    {/* <Col size="sm-2" style={{backgroundColor:"clear"}} /> */}
-    <Col size="sm-2" style={{backgroundColor:"clear"}} />
-    <Col size="sm-2" style={{backgroundColor:"clear"}} />
-    {/* <Col size="sm-2" style={{backgroundColor:"clear"}} /> */}
-    <Col size="sm-4" id="col-center" style={{backgroundColor:"clear"}}>
-      <a href="#" className="button">Cardiologist</a>
-    </Col>
-  </Row>
+class navbar extends Component {
 
-  <h1 id="green-header">⚕️   My Patient Portal   ⚕️</h1>
-  <p id="green-border">Navigate Further From This Page</p>
-   
- </Container>
-);
+  state ={
+    isLoggedOut: false
+  }
 
-  
+  logout = async () => {
+    const response = await API.patientLogout();
+    this.setState({ isLoggedOut: response.data.logoutStatus });
+  }
+
+  render() {
+    if (this.state.isLoggedOut) {
+      return (
+        <Redirect to={{
+          pathname: '/',
+          state: { from: this.props.location }
+          }} 
+        /> 
+      )
+    }
+    return (
+      <Container fluid className="navbar-container">
+
+        <Row id="row-nav">
+          <Col size="sm-3" style={{backgroundColor:"clear"}} />
+          <Col size="sm-2" id="col-right" style={{backgroundColor:"clear"}}>
+            <Link to="/patients/lab-result" className="button">Lab Results</Link>
+          </Col>
+          <Col size="sm-2" id="col-center" style={{backgroundColor:"clear"}}>
+            <Link to="/patients" className="button">Patient Home</Link>
+          </Col>
+          <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
+            <Link to="/patients/profile-info" className="button">Patient Info</Link>
+          </Col>
+          <Col size="sm-3" style={{backgroundColor:"clear"}} />
+        </Row>
+      
+        <Row id="row-nav">
+          <Col size="sm-2" style={{backgroundColor:"clear"}} />
+          <Col size="sm-2" id="col-left" style={{backgroundColor:"clear"}}>
+            <Link to="/patients/visits" className="button">Visits</Link>
+          </Col>
+          <Col size="sm-2" style={{backgroundColor:"clear"}} />
+          <Col size="sm-2" style={{backgroundColor:"clear"}} />
+          <Col size="sm-2" id="col-right" style={{backgroundColor:"clear"}}>
+            <Link to="/patients/messages" className="button">Messages</Link>
+          </Col>
+          <Col size="sm-2" style={{backgroundColor:"clear"}} />
+        </Row>
+
+        <Row id="row-nav">
+          <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
+            <Link to="/patients/rx" className="button">Pharmacy</Link>
+          </Col>
+          <Col size="sm-2" style={{backgroundColor:"clear"}}>
+            <h2 className="a">My Patient Portal</h2>
+          </Col>
+          <Col size="sm-5" id="col-center" style={{backgroundColor:"clear"}}>
+            <Link to="#" className="button" onClick={this.logout}>Log Out</Link>
+          </Col>
+        </Row>
+      
+      </Container>
+    )
+  }
+}
 
 export default navbar;

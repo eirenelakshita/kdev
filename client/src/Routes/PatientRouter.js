@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Messages from "../pages/Messages";
 import Visits from "../pages/Visits";
 import ProfileInfo from "../pages/Forms";
@@ -20,7 +20,7 @@ class PatientRouter extends Component {
           <Route path="/patients/visits" component={Visits} />
           <Route path="/patients/rx" component={Rx} />
           <Route component={Home} />
-        </Switch>
+        </Switch>       
       </div>
     )
   }

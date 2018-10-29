@@ -1,25 +1,42 @@
 body {
-  background-image: url("https://www.stvincentsconsulting.com/img/img-480310816.jpg");
+  background-image: url("https://78.media.tumblr.com/2b608f59e905d305c7b1e5609131f35a/tumblr_inline_mum5alefHY1ry1icv.jpg");
   height: 100%;
   width: 100%;
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat;
+  background-size: auto;
   background-attachment: fixed;
   text-align: center;
 }
+
+.navbar-container {
+  margin-bottom: 2em;
+}
+
 .button {
   background-color: #b2c675;
   border: solid darkgreen 2px;
   color: white;
   padding: 15px 32px;
-  /* text-align: center; */
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
   margin: 4px 2px;
-  cursor: pointer;
+  cursor: grab;
   border-radius: 50%;
+  font-family: Garamond;
+}
+.a {
+  background-color: #b2c675;
+  border: solid darkgreen 2px;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: grab;
+  border-radius: 5px;
   font-family: Garamond;
 }
 #green-header {
@@ -29,8 +46,8 @@ body {
   border: solid darkgreen 2px;
   font-family: Garamond;
   padding-top: 4px;
-  margin-left: 275px;
-  margin-right: 275px;
+ margin-left: 350px;
+ margin-right: 350px;
 }
 #green-border {
   color: white;
@@ -57,6 +74,4 @@ body {
 
 .row-nav {
   height: 30 px;
-  padding-top: 50px;
-
 }

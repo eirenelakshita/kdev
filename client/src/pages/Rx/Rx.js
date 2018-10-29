@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import Jumbotron from "../../components/Jumbotron";
 import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+
 
 class Rx extends Component {
   // Setting our component's initial state
@@ -45,10 +44,9 @@ class Rx extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Rx</h1>
-            </Jumbotron>
+          <Col size="md-2 sm-2"></Col>
+          <Col size="md-8 sm-8">
+            <h1>Rx</h1>
             {this.state.rx.length ? (
               <List>
                 {this.state.rx.map(rx => {
@@ -71,7 +69,6 @@ class Rx extends Component {
                         <Col size="3" />
                         <Col size="9">
                           <p>Notes: {rx.drugInfo}</p>
-                          {/* <p>Prescription: {rx.Prescription}</p> */}
                         </Col>
                       </Row>
                       <DeleteBtn onClick={() => this.deleteRx(rx._id)} />
@@ -83,6 +80,7 @@ class Rx extends Component {
                 <h3>No Results to Display</h3>
               )}
           </Col>
+          <Col size="md-2 sm-2"></Col>
         </Row>
       </Container>
     );
@@ -90,20 +88,3 @@ class Rx extends Component {
 }
 
 export default Rx;
-
-  
-
-   
-
-
-
-   
-        
-
-
-  
-// );
-
-  
-
-// export default rx;
