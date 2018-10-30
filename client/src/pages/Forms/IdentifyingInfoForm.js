@@ -56,7 +56,7 @@ class IdentifyingInfoForm extends PureComponent {
     this.setState({ formData: { ...this.state.formData, [name]: value }});
   }
 
-  handleEdit = event => {
+  handleEdit = event => {                 //this will change an input from readonly to editable
     let field = event.currentTarget.id;
     let newReturnedFields = this.state.returnedFields.filter(item => {
       return (item !== field)

@@ -5,7 +5,7 @@ const Footer = () => (
 
 
 <footer className="text-center">
-  <p>© Company 2018</p>
+  <p>© KDEV 2018</p>
 </footer>
 
 );
