@@ -39,6 +39,7 @@ body {
   border-radius: 5px;
   font-family: Garamond;
 }
+
 #green-header {
   color: white;
   text-align: center;
@@ -49,6 +50,7 @@ body {
  margin-left: 350px;
  margin-right: 350px;
 }
+
 #green-border {
   color: white;
   text-align: center;
@@ -58,8 +60,8 @@ body {
   margin-left: 275px;
   margin-right: 275px;
   font-size: 20px;
-  
 }
+
 .col-center {
   text-align: center;
 }
