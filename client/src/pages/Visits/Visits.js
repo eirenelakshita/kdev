@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
+import AuthAPI from "../../utils/AuthAPI";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 
@@ -9,6 +10,8 @@ class Visits extends Component {
   // Setting our component's initial state
   state = {
     visits: [],
+    username: "",
+    PatientID: "",
     DoctorID: "",
     Doctor_Speciality: "",
     Prescription: "",
@@ -20,6 +23,7 @@ class Visits extends Component {
   // When the component mounts, load all visits and save them to this.state.visits
   componentDidMount() {
     this.loadVisits();
+    this.loadUser();
   }
 
   // Loads all visits  and sets them to this.state.visits
@@ -42,13 +46,19 @@ class Visits extends Component {
       .catch(err => console.log(err));
   };
 
+  loadUser = () => {
+    AuthAPI.getCurrentUser()
+    .then(res => this.setState({ username: ""}))
+    .catch(err => console.log(err))
+  }
+
   render() {
     return (
       <Container>
         <Row>
           <Col size="md-2 sm-2"></Col>
           <Col size="md-8 sm-8">
-            <h1>Previous Visits</h1>
+            <h1>{this.username}'s Previous Visits</h1>
             {this.state.visits.length ? (
               <List>
                 {this.state.visits.map(visit => {
