@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Jumbotron from "../../components/Jumbotron";
 import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
@@ -49,9 +48,7 @@ class Visits extends Component {
         <Row>
           <Col size="md-2 sm-2"></Col>
           <Col size="md-8 sm-8">
-            <Jumbotron>
-              <h1>Previous Visits</h1>
-            </Jumbotron>
+            <h1>Previous Visits</h1>
             {this.state.visits.length ? (
               <List>
                 {this.state.visits.map(visit => {

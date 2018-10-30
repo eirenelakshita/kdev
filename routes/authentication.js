@@ -46,13 +46,17 @@ module.exports = app => {
     res.json({"accountCreated": true});
   });
 
-  app.post("/login", passport.authenticate("local-patient-signin", {failureMessage: "not working"}), (req,res) => {
-    res.json({"field": "hi"});
+  app.post("/login", passport.authenticate("local-patient-signin", {failureMessage: "Please try again."}), (req,res) => {
+    res.json({"isLoggedIn": true});
   });
 
   app.get("/isauth", ensureAuthenticated, (req, res) => {
     res.json({"isAuth": true});
   });
+
+  app.get("/getcurrentuser", ensureAuthenticated, (req, res) => {
+    res.json(req.user);
+  })
 
   app.get("/logout", (req, res) => {
     req.logout();
