@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
 import AuthAPI from "../../utils/AuthAPI";
 import { Col, Row, Container } from "../../components/Grid";
@@ -39,12 +38,6 @@ class Visits extends Component {
     return Date.substring(0, 10)
   }
 
-  // Deletes a visit from the database with a given id, then reloads visits from the db
-  deleteVisit = id => {
-    API.deleteVisit(id)
-      .then(res => this.loadVisits())
-      .catch(err => console.log(err));
-  };
 
   loadUser = () => {
     AuthAPI.getCurrentUser()
@@ -84,7 +77,6 @@ class Visits extends Component {
                           <p>Prescription: {visit.Prescription}</p>
                         </Col>
                       </Row>
-                      <DeleteBtn onClick={() => this.deleteVisit(visit._id)} />
                     </ListItem>
                   );
                 })}

@@ -1,5 +1,4 @@
 import React, { PureComponent } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
 import FormAPI from "../../utils/FormAPI";
 import FormFields from "./doctorVisitsForm.json";
 import API from "../../utils/API";
@@ -36,13 +35,6 @@ class DoctorVisits extends PureComponent {
   chopDate = Date => {
     return Date.substring(0, 10)
   }
-
-  // Deletes a visit from the database with a given id, then reloads visits from the db
-  deleteVisit = id => {
-    API.deleteVisit(id)
-      .then(res => this.loadVisits())
-      .catch(err => console.log(err));
-  };
 
   // Handles updating component state when the user types into the input field
   // handleInputChange = event => {
@@ -128,7 +120,6 @@ class DoctorVisits extends PureComponent {
                           <p>Prescription: {visit.Prescription}</p>
                         </Col>
                       </Row>
-                      <DeleteBtn onClick={() => this.deleteVisit(visit._id)} />
                     </ListItem>
                   );
                 })}

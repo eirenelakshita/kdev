@@ -18,6 +18,7 @@ class IdentifyingInfoForm extends PureComponent {
   componentDidMount() {
     AuthAPI.getCurrentUser()
       .then(res => {
+        console.log(res.data._id);
         let currentUserID = res.data._id
 
         this.setState({ currentUserID: currentUserID })
