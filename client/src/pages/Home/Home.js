@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import { Container } from "../../components/Grid";
 
 class Home extends Component {
 
   render() {
     return (
-      <div>
+      <Container classes="yellow-back">
         <h2>This is the home page of your Patient Portal.</h2>
-      </div>
+      </Container>
     )
   }
 }
