@@ -7,7 +7,7 @@
     { "sectionheader": "Name",
       "rows": [
         {"cols": [
-          { "size": "md-4", "fieldName": "lastName", "label": "Last Name", "required": "true" },
+          { "size": "md-4", "fieldName": "Last Name", "label": "Last Name", "required": "true" },
           { "size": "md-2", "fieldName": "Mid Init" },
           { "size": "md-4", "fieldName": "First Name", "required": "true" },
           { "size": "md-2", "fieldName": "Suffix/Prefix" }

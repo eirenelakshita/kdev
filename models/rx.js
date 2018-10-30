@@ -14,6 +14,6 @@ const RxSchema = new Schema({
 	Time: { type: Date, default: Date.now }
 });
 
-const Rx = mongoose.model("rx", RxSchema);
+const Rx = mongoose.model("Rx", RxSchema);
 
 module.exports = Rx;

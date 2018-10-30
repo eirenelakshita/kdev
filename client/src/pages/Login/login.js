@@ -25,7 +25,6 @@ export default class Login extends Component{
     API.patientLogin({ username: this.state.username, password: this.state.password})
       .then(res => {
         if (res.status === 200) {
-          console.log(res.data);
           this.setState({ username: "", password: "", isLoggedIn: true });
         }
       })

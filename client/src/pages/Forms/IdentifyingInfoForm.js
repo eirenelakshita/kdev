@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import { Container, Row, Col } from "../../components/Grid";
 import { Input, FormBtn } from "../../components/Form";
 import FormAPI from "../../utils/FormAPI";
+import AuthAPI from "../../utils/AuthAPI";
 import FormFields from "./identifyinginfo.json";
 import "./IdentifyingInfoForm.css";
 
@@ -9,18 +10,27 @@ class IdentifyingInfoForm extends PureComponent {
 
   state = {
     formData: {},
+    currentUserID: null,
     existingProfile: false,
-    id: null
+    profileID: null
   }
 
   componentDidMount() {
-    FormAPI.getCurrentData()
+    AuthAPI.getCurrentUser()
       .then(res => {
-        console.log(res)
-        if (res.data[0]._id) {
-          this.setState({ existingProfile: true, id: res.data[0]._id })
-        }
+        let currentUserID = res.data._id
+
+        this.setState({ currentUserID: currentUserID })
+        FormAPI.getCurrentData(currentUserID) //currently just the user data
+          .then(res => {
+            console.log("getcurrentprofile", res)
+            if (res.data) {
+              this.setState({ existingProfile: true, profileID: res.data._id })
+            }
+          })
+          .catch(err => console.log(err));
       })
+      .catch(err => console.log(err));
   }
 
   handleInputChange = event => {
@@ -31,15 +41,17 @@ class IdentifyingInfoForm extends PureComponent {
   handleSubmit = event => {
     event.preventDefault();
 
-    if (this.state.existingProfile === true) {
-      FormAPI.updateForm(this.state.id, this.state.formData)
+    if (this.state.existingProfile) {
+      FormAPI.updateForm(this.state.profileID, this.state.formData)
         .then(res => {
-          console.log(res)
+          document.getElementById("identifyingInfoForm").reset();
+          this.setState({ formData: "" })
         })
         .catch(err => console.log(err))
     }
     else {
-      FormAPI.submitForm(this.state.formData)
+      console.log("data", this.state.formData)
+      FormAPI.submitForm(this.state)
         .then(res => {
           document.getElementById("identifyingInfoForm").reset();
           this.setState({ formData: "" })
