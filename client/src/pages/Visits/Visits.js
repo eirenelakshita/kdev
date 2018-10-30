@@ -23,7 +23,7 @@ class Visits extends Component {
   componentDidMount() {
     this.loadVisits();
     this.loadUser();
-  }
+  };
 
   // Loads all visits  and sets them to this.state.visits
   loadVisits = () => {
@@ -36,14 +36,13 @@ class Visits extends Component {
 
   chopDate = Date => {
     return Date.substring(0, 10)
-  }
-
+  };
 
   loadUser = () => {
     AuthAPI.getCurrentUser()
     .then(res => this.setState({ username: res.data.username}))
     .catch(err => console.log(err))
-  }
+  };
 
   render() {
     return (
