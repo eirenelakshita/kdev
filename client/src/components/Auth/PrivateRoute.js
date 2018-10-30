@@ -26,7 +26,7 @@ class PrivateRoute extends Component {
 
   render() {
     if (this.state.isAuth === undefined) {
-      return <div>nothing</div> //load a thinking component here while it determines whether you're authorized to access the route
+      return <div>...</div> //load a thinking component here while it determines whether you're authorized to access the route
     }
     
     return (

@@ -42,7 +42,7 @@ export default class Login extends Component{
       )
     }
     return(
-      <div>
+      <div className="homepage-body">
         <Container id="container">
           <div className="d-flex justify-content-center h-100">
             <div className="card">

@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { Container, Row, Col } from "../../components/Grid";
-import { Input, FormBtn } from "../../components/Form";
+import { Input, ReadOnlyInput, FormBtn } from "../../components/Form";
 import FormAPI from "../../utils/FormAPI";
 import AuthAPI from "../../utils/AuthAPI";
 import FormFields from "./identifyinginfo.json";
@@ -10,60 +10,76 @@ class IdentifyingInfoForm extends PureComponent {
 
   state = {
     formData: {},
+    returnedFields: [],
     currentUserID: null,
     existingProfile: false,
     profileID: null
   }
 
   componentDidMount() {
+    this.getCurrentUser();
+  }
+
+  getCurrentUser = () => {
     AuthAPI.getCurrentUser()
       .then(res => {
-        let currentUserID = res.data._id
-
-        this.setState({ currentUserID: currentUserID })
-        FormAPI.getCurrentData(currentUserID) //currently just the user data
-          .then(response => {
-            console.log("getcurrentprofile", response.data)
-            if (response.data) {
-              this.setState({ existingProfile: true, profileID: response.data._id })
-              let keys = Object.keys(response.data);
-              let newStateObj = keys.filter(key => {
-                return (key !== "__v" && key !== "_id" && key !== "patientID")
-              }).map(key => {
-                return {[key]: response.data[key]}
-              })
-              console.log(newStateObj);
-            }
-          })
-          .catch(err => console.log(err));
+        let currentUserID = res.data._id;
+        this.setState({ currentUserID: currentUserID }, this.updateFormData(currentUserID));
       })
       .catch(err => console.log(err));
   }
 
+  updateFormData = (currentUserID) => {
+    FormAPI.getCurrentData(currentUserID)
+    .then(response => {
+      if (response.data) {
+        this.setState({ existingProfile: true, profileID: response.data._id })
+        let keys = Object.keys(response.data);  //couldn't just filter over an object, it had to be an array -- there may be a better way to do this
+        let newStateObj = keys.filter(key => {
+          return (key !== "__v" && key !== "_id" && key !== "patientID") //take out the fields we don't want in our formData object
+        }).map(key => {
+          return {key: key, value: response.data[key]}
+        })
+        newStateObj.map(item => {
+          if (item.value != null) {
+            this.setState({ returnedFields: [...this.state.returnedFields, item.key] })
+          }
+          return this.setState({ formData: { ...this.state.formData, [item.key]: item.value }});
+        })
+      }
+    })
+    .catch(err => console.log(err));
+  }
+
   handleInputChange = event => {
     let { name, value } = event.target;
-    this.setState({ formData: { ...this.state.formData, [name]: value.trim() }});
+    this.setState({ formData: { ...this.state.formData, [name]: value }});
+  }
+
+  handleEdit = event => {
+    let field = event.currentTarget.id;
+    let newReturnedFields = this.state.returnedFields.filter(item => {
+      return (item !== field)
+    });
+    this.setState({ returnedFields: newReturnedFields });
   }
 
   handleSubmit = event => {
     event.preventDefault();
 
     if (this.state.existingProfile) {
-      console.log("update call")
       FormAPI.updateForm(this.state.profileID, this.state.formData)
         .then(res => {
           document.getElementById("identifyingInfoForm").reset();
-          this.setState({ formData: "" })
+          this.updateFormData(this.state.currentUserID);
         })
         .catch(err => console.log(err))
     }
     else {
-      console.log("create call")
       FormAPI.submitForm(this.state)
         .then(res => {
-          console.log("come back from res")
           document.getElementById("identifyingInfoForm").reset();
-          this.setState({ formData: "", existingProfile: true })
+          this.updateFormData(this.state.currentUserID);
         })
         .catch(err => console.log(err))
     }
@@ -83,16 +99,34 @@ class IdentifyingInfoForm extends PureComponent {
               <div className="form-section" >
                 {section.rows.map((row, rindex) => (
                   <Row key={`section${sindex}-row${rindex}`}>
-                    {row.cols.map((col, cindex) => (
-                      <Col size={col.size} key={`section${sindex}-row${rindex}-col${cindex}`}>
-                        <Input 
-                          label={col.fieldName}
-                          name={col.fieldName.split(/\s|\//).map((word, index) => word = (index === 0) ? word.toLowerCase() : word ).join("")}
-                          onChange={this.handleInputChange}
-                          required={col.required ? true : false}
-                        />
-                      </Col>
-                    ))}
+                    {row.cols.map((col, cindex) => {
+                      if (this.state.returnedFields.includes(col.fieldName)) {
+                        return (
+                          <Col size={col.size} key={`section${sindex}-row${rindex}-col${cindex}`}>
+                              <ReadOnlyInput 
+                                label={col.label}
+                                name={col.fieldName}
+                                id={col.fieldName}
+                                value={this.state.formData[col.fieldName] || ""}
+                                onClick={this.handleEdit}
+                                readOnly
+                              />
+                          </Col>
+                        )
+                      }
+                      return (
+                        <Col size={col.size} key={`section${sindex}-row${rindex}-col${cindex}`}>
+                          <Input 
+                            label={col.label}
+                            name={col.fieldName}
+                            onChange={this.handleInputChange}
+                            required={col.required ? true : false}
+                            value={this.state.formData[col.fieldName] || ""}
+                            placeholder={col.format}
+                          />
+                        </Col>
+                      )
+                    })}
                   </Row>
                 ))}
               </div>

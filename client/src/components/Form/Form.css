@@ -11,3 +11,8 @@
   border-radius: 5px;
   font-family: Garamond;
 }
+
+.edit-btn {
+  background-color: #c4cdd3;
+  color: black;
+}
