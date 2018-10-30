@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
+import FormAPI from "../../utils/FormAPI";
 import FormFields from "./doctorVisitsForm.json";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
@@ -21,7 +21,7 @@ class DoctorVisits extends PureComponent {
   // When the component mounts, load all visits and save them to this.state.visits
   componentDidMount() {
     this.loadVisits();
-  }
+  };
 
   // Loads all visits  and sets them to this.state.visits
   loadVisits = () => {
@@ -34,13 +34,6 @@ class DoctorVisits extends PureComponent {
 
   chopDate = Date => {
     return Date.substring(0, 10)
-  }
-
-  // Deletes a visit from the database with a given id, then reloads visits from the db
-  deleteVisit = id => {
-    API.deleteVisit(id)
-      .then(res => this.loadVisits())
-      .catch(err => console.log(err));
   };
 
   render() {
@@ -101,7 +94,6 @@ class DoctorVisits extends PureComponent {
                           <p>Prescription: {visit.Prescription}</p>
                         </Col>
                       </Row>
-                      <DeleteBtn onClick={() => this.deleteVisit(visit._id)} />
                     </ListItem>
                   );
                 })}

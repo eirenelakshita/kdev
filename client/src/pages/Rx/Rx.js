@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
@@ -72,8 +71,7 @@ class Rx extends Component {
                           
                         </Col>
                       </Row>
-                      <DeleteBtn onClick={() => this.deleteRx(rx._id)} />
-                    </ListItem>
+                      </ListItem>
                   );
                 })}
               </List>
