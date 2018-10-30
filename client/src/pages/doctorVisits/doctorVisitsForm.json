@@ -7,26 +7,16 @@
     { "sectionheader": "Visit Information",
       "rows": [
         {"cols": [
-          { "size": "md-4", "fieldName": "Phone Number", "format": "xxx-xxx-xxxx", "required": "true" },
-          { "size": "md-4", "fieldName": "Date of Birth", "format": "MM/DD/YYYY", "required": "true" },
-          { "size": "md-4", "fieldName": "Social Security Number", "format": "xxx-xx-xxxx", "required": "true" }
+          { "size": "md-8", "fieldName": "PatientID", "format": "xxxx", "required": "true" }
         ]},
         {"cols": [
-          { "size": "md-4", "fieldName": "Sex", "required": "true" },
-          { "size": "md-8", "fieldName": "Marital Status", "required": "true" }
+          { "size": "md-8", "fieldName": "Prescription", "required": "true" }
         ]},
         {"cols": [
-          { "size": "md-6", "fieldName": "Race", "required": "true" },
-          { "size": "md-6", "fieldName": "Ethnicity", "required": "true" }
-        ]}
-      ]
-    },
-    { "sectionheader": "Emergency Contact",
-      "rows": [
+          { "size": "md-8", "fieldName": "Diagnosis", "required": "true" }
+        ]},
         {"cols": [
-          { "size": "md-4", "fieldName": "Contact Name", "required": "true" },
-          { "size": "md-4", "fieldName": "Contact Relationship", "required": "true" },
-          { "size": "md-4", "fieldName": "Contact Phone Number", "required": "true" }
+          { "size": "md-8", "fieldName": "Data", "required": "true" }
         ]}
       ]
     }
