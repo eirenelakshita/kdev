@@ -17,7 +17,7 @@ const patientProfileSchema = new Schema({
   zipCode: {type: String, trim: true},
   phoneNumber: {type: String, trim: true},
   dateofBirth: {type: String, trim: true},
-  socialSecurityNumber: {type: Number, trim: true},
+  // socialSecurityNumber: {type: Number, trim: true},
   sex: {type: String, trim: true},
   maritalStatus: {type: String, trim: true},
   race: {type: String, trim: true},
