@@ -6,7 +6,7 @@ class Home extends Component {
   render() {
     return (
       <Container classes="yellow-back">
-        <h2>This is the home page of your Patient Portal.</h2>
+        <h2>This is the home page of your {this.props.which} Portal.</h2>
       </Container>
     )
   }

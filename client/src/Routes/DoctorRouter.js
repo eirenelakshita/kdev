@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "../pages/Home";
-import NavBar from "../components/NavBar";
+import DoctorNavBar from "../components/NavBar/DoctorNavBar";
 import DoctorVisits from "../pages/doctorVisits";
 
 const DoctorTest = () => (
@@ -12,11 +12,11 @@ class DoctorRouter extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <DoctorNavBar />
         <Switch>
           <Route path="/doctors/test" component={DoctorTest} />
           <Route path="/doctors/visits" component={DoctorVisits} />
-          <Route component={Home} />
+          <Route render={props => <Home {...props} which="Doctor" />} />
         </Switch>
       </div>
     )
