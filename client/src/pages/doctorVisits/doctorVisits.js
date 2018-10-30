@@ -1,5 +1,4 @@
 import React, { PureComponent } from "react";
-import FormAPI from "../../utils/FormAPI";
 import FormFields from "./doctorVisitsForm.json";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";

@@ -65,7 +65,9 @@ class Rx extends Component {
                         </Col>
                       </Row>
                       <Row>
-                        <Col size="3" />
+                        <Col size="3">
+                          <p>{rx.rx}</p>
+                        </Col>
                         <Col size="9">
                           <p>Notes: {rx.rxInfo}</p>
                           
