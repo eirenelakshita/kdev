@@ -10,7 +10,7 @@ const patientProfileSchema = new Schema({
   midInit: {type: String, maxLength: 1, trim: true},
   firstName: {type: String, required: true, trim: true},
   suffixPrefix: {type: String, trim: true},
-  streetAddress: {type: String, trim: true},
+  streetAddress: {type: String},
   addressLine2: {type: String, trim: true},
   city: {type: String, trim: true},
   state: {type: String, trim: true},
@@ -22,7 +22,7 @@ const patientProfileSchema = new Schema({
   maritalStatus: {type: String, trim: true},
   race: {type: String, trim: true},
   ethnicity: {type: String, trim: true},
-  contactName: {type: String, trim: true},
+  contactName: {type: String},
   contactRelationship: {type: String, trim: true},
   contactPhoneNumber: {type: String, trim: true}
 })
