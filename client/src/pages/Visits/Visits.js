@@ -48,7 +48,7 @@ class Visits extends Component {
 
   loadUser = () => {
     AuthAPI.getCurrentUser()
-    .then(res => this.setState({ username: ""}))
+    .then(res => this.setState({ username: res.data}))
     .catch(err => console.log(err))
   }
 
