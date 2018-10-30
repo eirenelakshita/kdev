@@ -42,6 +42,7 @@ class IdentifyingInfoForm extends PureComponent {
     event.preventDefault();
 
     if (this.state.existingProfile) {
+      console.log("update call")
       FormAPI.updateForm(this.state.profileID, this.state.formData)
         .then(res => {
           document.getElementById("identifyingInfoForm").reset();
@@ -50,11 +51,12 @@ class IdentifyingInfoForm extends PureComponent {
         .catch(err => console.log(err))
     }
     else {
-      console.log("data", this.state.formData)
+      console.log("create call")
       FormAPI.submitForm(this.state)
         .then(res => {
+          console.log("come back from res")
           document.getElementById("identifyingInfoForm").reset();
-          this.setState({ formData: "" })
+          this.setState({ formData: "", existingProfile: true })
         })
         .catch(err => console.log(err))
     }
