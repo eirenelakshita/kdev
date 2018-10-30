@@ -23,9 +23,16 @@ class IdentifyingInfoForm extends PureComponent {
         this.setState({ currentUserID: currentUserID })
         FormAPI.getCurrentData(currentUserID) //currently just the user data
           .then(response => {
-            console.log("getcurrentprofile", response)
+            console.log("getcurrentprofile", response.data)
             if (response.data) {
               this.setState({ existingProfile: true, profileID: response.data._id })
+              let keys = Object.keys(response.data);
+              let newStateObj = keys.filter(key => {
+                return (key !== "__v" && key !== "_id" && key !== "patientID")
+              }).map(key => {
+                return {[key]: response.data[key]}
+              })
+              console.log(newStateObj);
             }
           })
           .catch(err => console.log(err));
@@ -64,7 +71,7 @@ class IdentifyingInfoForm extends PureComponent {
 
   render() {
     return (
-      <Container id="color">
+      <Container classes="yellow-back">
         <h1>{FormFields.header.title}</h1>
         <h4>{FormFields.header.subtext}</h4>
         <br />

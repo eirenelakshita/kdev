@@ -27,7 +27,7 @@ class navbar extends Component {
       )
     }
     return (
-      <Container fluid className="navbar-container">
+      <Container fluid classes="navbar-container">
 
         <Row id="row-nav">
           <Col size="sm-3" style={{backgroundColor:"clear"}} />
