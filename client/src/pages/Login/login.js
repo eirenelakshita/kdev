@@ -86,14 +86,14 @@ export default class Login extends Component{
                         type="button" 
                         className="btn btn-warning btn-block btn-sm"
                         name="DoctorLogin"
-                        onClick={this.handleFormSubmit}>I am Doctor
+                        onClick={this.handleFormSubmit}>I am a Doctor
                       </button>
 
                       <button 
                         type="submit" 
                         className="btn btn-success btn-block btn-sm"
                         name="PatientLogin"
-                        onClick={this.handleFormSubmit}>I am Patient
+                        onClick={this.handleFormSubmit}>I am a Patient
                       </button>
 
                   </div>
