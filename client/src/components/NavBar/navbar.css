@@ -10,7 +10,8 @@ body {
 }
 
 .navbar-container {
-  margin-bottom: 2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .button {
@@ -47,8 +48,8 @@ body {
   border: solid darkgreen 2px;
   font-family: Garamond;
   padding-top: 4px;
- margin-left: 350px;
- margin-right: 350px;
+  margin-left: 350px;
+  margin-right: 350px;
 }
 
 #green-border {

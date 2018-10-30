@@ -7,49 +7,49 @@
     { "sectionheader": "Name",
       "rows": [
         {"cols": [
-          { "size": "md-4", "fieldName": "Last Name", "label": "Last Name", "required": "true" },
-          { "size": "md-2", "fieldName": "Mid Init" },
-          { "size": "md-4", "fieldName": "First Name", "required": "true" },
-          { "size": "md-2", "fieldName": "Suffix/Prefix" }
+          { "size": "md-4", "fieldName": "lastName", "label": "Last Name", "required": "true" },
+          { "size": "md-2", "fieldName": "midInit", "label": "Mid Init" },
+          { "size": "md-4", "fieldName": "firstName", "label": "First Name", "required": "true" },
+          { "size": "md-2", "fieldName": "suffixPrefix", "label": "Suffix/Prefix" }
         ]}
       ]
     },
     { "sectionheader": "Address",
       "rows": [
         {"cols": [
-          { "size": "md-6", "fieldName": "Street Address", "required": "true" },
-          { "size": "md-6", "fieldName": "Address Line 2" }
+          { "size": "md-6", "fieldName": "streetAddress", "label": "Street Address", "required": "true" },
+          { "size": "md-6", "fieldName": "addressLine2", "label": "Address Line 2" }
         ]},
         {"cols": [
-          { "size": "md-6", "fieldName": "City", "required": "true" },
-          { "size": "md-2", "fieldName": "State", "format": "XX", "required": "true" },
-          { "size": "md-4", "fieldName": "Zip Code", "required": "true" }
+          { "size": "md-6", "fieldName": "city", "label": "City", "required": "true" },
+          { "size": "md-2 sm-3", "fieldName": "state", "label": "State", "format": "XX", "required": "true" },
+          { "size": "md-4 sm-3", "fieldName": "zipCode", "label": "Zip Code", "required": "true" }
         ]}
       ]
     },
     { "sectionheader": "Other",
       "rows": [
         {"cols": [
-          { "size": "md-4", "fieldName": "Phone Number", "format": "xxx-xxx-xxxx", "required": "true" },
-          { "size": "md-4", "fieldName": "Date of Birth", "format": "MM/DD/YYYY", "required": "true" },
-          { "size": "md-4", "fieldName": "Social Security Number", "format": "xxx-xx-xxxx", "required": "true" }
+          { "size": "md-4", "fieldName": "phoneNumber", "label": "Phone Number", "format": "xxx-xxx-xxxx", "required": "true" },
+          { "size": "md-4", "fieldName": "dateofBirth", "label": "Date of Birth", "format": "MM/DD/YYYY", "required": "true" },
+          { "size": "md-4", "fieldName": "socialSecurityNumber", "label": "Social Security Number", "format": "xxx-xx-xxxx", "required": "true" }
         ]},
         {"cols": [
-          { "size": "md-4", "fieldName": "Sex", "required": "true" },
-          { "size": "md-8", "fieldName": "Marital Status", "required": "true" }
+          { "size": "md-4", "fieldName": "sex", "label": "Sex", "required": "true" },
+          { "size": "md-8", "fieldName": "maritalStatus", "label": "Marital Status", "required": "true" }
         ]},
         {"cols": [
-          { "size": "md-6", "fieldName": "Race", "required": "true" },
-          { "size": "md-6", "fieldName": "Ethnicity", "required": "true" }
+          { "size": "md-6", "fieldName": "race", "label": "Race", "required": "true" },
+          { "size": "md-6", "fieldName": "ethnicity", "label": "Ethnicity", "required": "true" }
         ]}
       ]
     },
     { "sectionheader": "Emergency Contact",
       "rows": [
         {"cols": [
-          { "size": "md-4", "fieldName": "Contact Name", "required": "true" },
-          { "size": "md-4", "fieldName": "Contact Relationship", "required": "true" },
-          { "size": "md-4", "fieldName": "Contact Phone Number", "required": "true" }
+          { "size": "md-4", "fieldName": "contactName", "label": "Contact Name", "required": "true" },
+          { "size": "md-4", "fieldName": "contactRelationship", "label": "Contact Relationship", "required": "true" },
+          { "size": "md-4", "fieldName": "contactPhoneNumber", "label": "Contact Phone Number", "required": "true" }
         ]}
       ]
     }
