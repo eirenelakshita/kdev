@@ -1,17 +1,16 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import DeleteBtn from "../../components/DeleteBtn";
+import FormAPI from "../../utils/FormAPI";
+import FormFields from "./doctorVisitsForm.json";
 import API from "../../utils/API";
-import AuthAPI from "../../utils/AuthAPI";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
+import { Input, FormBtn } from "../../components/Form";
 
-
-class Visits extends Component {
+class DoctorVisits extends PureComponent {
   // Setting our component's initial state
   state = {
     visits: [],
-    username: "",
-    PatientID: "",
     DoctorID: "",
     Doctor_Speciality: "",
     Prescription: "",
@@ -23,7 +22,6 @@ class Visits extends Component {
   // When the component mounts, load all visits and save them to this.state.visits
   componentDidMount() {
     this.loadVisits();
-    this.loadUser();
   }
 
   // Loads all visits  and sets them to this.state.visits
@@ -46,19 +44,41 @@ class Visits extends Component {
       .catch(err => console.log(err));
   };
 
-  loadUser = () => {
-    AuthAPI.getCurrentUser()
-    .then(res => this.setState({ username: res.data}))
-    .catch(err => console.log(err))
-  }
-
   render() {
     return (
       <Container classes="yellow-back">
         <Row>
-          <Col size="md-2 sm-2"></Col>
-          <Col size="md-8 sm-8">
-            <h1>{this.username}'s Previous Visits</h1>
+          <Col size="md-6">
+              <h1>New Visit</h1>
+              <br />
+        <form id="doctorVisitsForm">
+          {FormFields.sections.map((section, sindex) => (
+            <div key={`section${sindex}`}>
+              <h1 className="form-section-header">{section.sectionheader}</h1>
+              <hr className="section-header-underline" />
+              <div className="form-section" >
+                {section.rows.map((row, rindex) => (
+                  <Row key={`section${sindex}-row${rindex}`}>
+                    {row.cols.map((col, cindex) => (
+                      <Col size={col.size} key={`section${sindex}-row${rindex}-col${cindex}`}>
+                        <Input 
+                          label={col.fieldName}
+                          name={col.fieldName.split(/\s|\//).map((word, index) => word = (index === 0) ? word.toLowerCase() : word ).join("")}
+                          onChange={this.handleInputChange}
+                          required={col.required ? true : false}
+                        />
+                      </Col>
+                    ))}
+                  </Row>
+                ))}
+              </div>
+            </div>
+          ))}
+          <FormBtn onClick={this.handleSubmit} type="submit">Submit</FormBtn>
+        </form>
+          </Col>
+          <Col size="md-6 sm-12">
+              <h1>Previous Visits</h1>
             {this.state.visits.length ? (
               <List>
                 {this.state.visits.map(visit => {
@@ -93,11 +113,10 @@ class Visits extends Component {
                 <h3>No Results to Display</h3>
               )}
           </Col>
-          <Col size="md-2 sm-2"></Col>
         </Row>
       </Container>
     );
   }
 }
 
-export default Visits;
+export default DoctorVisits;
