@@ -49,33 +49,31 @@ class DoctorVisits extends PureComponent {
       <Container classes="yellow-back">
         <Row>
           <Col size="md-6">
-              <h1>New Visit</h1>
-              <br />
-        <form id="doctorVisitsForm">
-          {FormFields.sections.map((section, sindex) => (
-            <div key={`section${sindex}`}>
-              <h1 className="form-section-header">{section.sectionheader}</h1>
-              <hr className="section-header-underline" />
-              <div className="form-section" >
-                {section.rows.map((row, rindex) => (
-                  <Row key={`section${sindex}-row${rindex}`}>
-                    {row.cols.map((col, cindex) => (
-                      <Col size={col.size} key={`section${sindex}-row${rindex}-col${cindex}`}>
-                        <Input 
-                          label={col.fieldName}
-                          name={col.fieldName.split(/\s|\//).map((word, index) => word = (index === 0) ? word.toLowerCase() : word ).join("")}
-                          onChange={this.handleInputChange}
-                          required={col.required ? true : false}
-                        />
-                      </Col>
+            <form id="doctorVisitsForm">
+              {FormFields.sections.map((section, sindex) => (
+                <div key={`section${sindex}`}>
+                  <h1 className="form-section-header" style={{textAlign: "center"}}>{section.sectionheader}</h1>
+                  <hr className="section-header-underline" />
+                  <div className="form-section" >
+                    {section.rows.map((row, rindex) => (
+                      <Row key={`section${sindex}-row${rindex}`}>
+                        {row.cols.map((col, cindex) => (
+                          <Col size={col.size} key={`section${sindex}-row${rindex}-col${cindex}`}>
+                            <Input 
+                              label={col.fieldName}
+                              name={col.fieldName.split(/\s|\//).map((word, index) => word = (index === 0) ? word.toLowerCase() : word ).join("")}
+                              onChange={this.handleInputChange}
+                              required={col.required ? true : false}
+                            />
+                          </Col>
+                        ))}
+                      </Row>
                     ))}
-                  </Row>
-                ))}
-              </div>
-            </div>
-          ))}
-          <FormBtn onClick={this.handleSubmit} type="submit">Submit</FormBtn>
-        </form>
+                  </div>
+                </div>
+              ))}
+              <FormBtn onClick={this.handleSubmit} type="submit">Submit</FormBtn>
+            </form>
           </Col>
           <Col size="md-6 sm-12">
               <h1>Previous Visits</h1>
