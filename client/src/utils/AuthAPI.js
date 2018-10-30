@@ -13,6 +13,9 @@ export default {
   },
   isAuthenticated: function() {
     return axios.get("/isauth");
+  },
+  getCurrentUser: function() {
+    return axios.get("/getcurrentuser");
   }
 
 };
