@@ -22,10 +22,10 @@ class IdentifyingInfoForm extends PureComponent {
 
         this.setState({ currentUserID: currentUserID })
         FormAPI.getCurrentData(currentUserID) //currently just the user data
-          .then(res => {
-            console.log("getcurrentprofile", res)
-            if (res.data) {
-              this.setState({ existingProfile: true, profileID: res.data._id })
+          .then(response => {
+            console.log("getcurrentprofile", response)
+            if (response.data) {
+              this.setState({ existingProfile: true, profileID: response.data._id })
             }
           })
           .catch(err => console.log(err));
