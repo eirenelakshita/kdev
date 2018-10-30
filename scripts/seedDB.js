@@ -198,11 +198,11 @@ db.Rx
 .then(() => db.Rx.collection.insertMany(rxSeed))
 .then(data => {
   console.log(data.result.n + " records inserted!");
-  process.exit(0);
+  // process.exit(0);
 })
 .catch(err => {
   console.error(err);
-  process.exit(1);
+  // process.exit(1);
 });
 
 db.LabResult_XRay
@@ -210,11 +210,11 @@ db.LabResult_XRay
   .then(() => db.LabResult_XRay.collection.insertMany(LabResultXRay))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
+    // process.exit(0);
       })
   .catch(err => {
     console.error(err);
-    process.exit(1);
+    // process.exit(1);
       });
 
 
@@ -223,11 +223,11 @@ db.LabResult_Drug
   .then(() => db.LabResult_Drug.collection.insertMany(LabResultDrug))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
+    // process.exit(0);
       })
   .catch(err => {
     console.error(err);
-    process.exit(1);
+    // process.exit(1);
       });
 
 
@@ -236,11 +236,11 @@ db.LabResult_Blood
   .then(() => db.LabResult_Blood.collection.insertMany(LabResultBlood))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
+    // process.exit(0);
       })
   .catch(err => {
     console.error(err);
-    process.exit(1);
+    // process.exit(1);
       });
 
       
@@ -250,11 +250,11 @@ db.Visit
   .then(() => db.Visit.collection.insertMany(visitSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
+    // process.exit(0);
   })
   .catch(err => {
     console.error(err);
-    process.exit(1);
+    // process.exit(1);
   });
 
 db.DoctorInfo
@@ -262,11 +262,11 @@ db.DoctorInfo
   .then(() => db.DoctorInfo.collection.insertMany(doctorInfoSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
+    // process.exit(0);
   })
   .catch(err => {
     console.error(err);
-    process.exit(1);
+    // process.exit(1);
   });
 
 
@@ -288,9 +288,9 @@ db.DoctorInfo
   .then(() => db.Patient.collection.insertMany(patientSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
+    // process.exit(0);
   })
   .catch(err => {
     console.error(err);
-    process.exit(1);
+    // process.exit(1);
   });
