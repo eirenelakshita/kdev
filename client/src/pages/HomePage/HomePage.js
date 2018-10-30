@@ -9,7 +9,7 @@ class HomePage extends React.Component {
 
   render(){
     return(
-     <div>
+     <div className="homepage-body">
         <Container>
           <div className="row row-offcanvas row-offcanvas-right" >
             <div className="col-xs-10 col-sm-7">

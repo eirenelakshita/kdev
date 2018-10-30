@@ -43,10 +43,10 @@ class Messages extends Component {
   render() {
     return (
 
-  <Container id="messages-container">
+  <Container id="messages-container" classes="yellow-back">
         <Row>
           <Col size="md-3 sm-3"></Col>
-          <Col size="md-6 sm-6" id="color-col">
+          <Col size="md-6 sm-6" >
             <h1>Send a Message</h1>
             <form>
               <Input

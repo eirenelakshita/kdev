@@ -1,22 +1,22 @@
 {
   "header": {
-    "title": "Identifying Information",
-    "subtext": "Please fill out the information below to begin building your patient profile."
+    "title": "Visit Information",
+    "subtext": "Please fill out the information below to keep track of patient visits."
   },
   "sections": [
-    { "sectionheader": "Visit Information",
+    { "sectionheader": "New Visit Info",
       "rows": [
         {"cols": [
-          { "size": "md-8", "fieldName": "PatientID", "format": "xxxx", "required": "true" }
+          { "size": "md-12", "fieldName": "PatientID", "format": "xxxx", "required": "true" }
         ]},
         {"cols": [
-          { "size": "md-8", "fieldName": "Prescription", "required": "true" }
+          { "size": "md-12", "fieldName": "Prescription", "required": "true" }
         ]},
         {"cols": [
-          { "size": "md-8", "fieldName": "Diagnosis", "required": "true" }
+          { "size": "md-12", "fieldName": "Diagnosis", "required": "true" }
         ]},
         {"cols": [
-          { "size": "md-8", "fieldName": "Data", "required": "true" }
+          { "size": "md-12", "fieldName": "Data", "required": "true" }
         ]}
       ]
     }

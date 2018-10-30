@@ -41,17 +41,17 @@ class Visits extends Component {
 
   loadUser = () => {
     AuthAPI.getCurrentUser()
-    .then(res => this.setState({ username: res.data}))
+    .then(res => this.setState({ username: res.data.username}))
     .catch(err => console.log(err))
   }
 
   render() {
     return (
-      <Container>
+      <Container classes="yellow-back">
         <Row>
           <Col size="md-2 sm-2"></Col>
           <Col size="md-8 sm-8">
-            <h1>{this.username}'s Previous Visits</h1>
+            <h1>{this.state.username}'s Previous Visits</h1>
             {this.state.visits.length ? (
               <List>
                 {this.state.visits.map(visit => {
