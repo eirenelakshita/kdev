@@ -1,6 +1,4 @@
-const mongoose = require("mongoose")
 const db = require("../models");
-const PatientProfile = require("../models/patientProfile");
 
 module.exports = {
   findCurrentProfile: function(req, res) {
@@ -10,11 +8,13 @@ module.exports = {
       .catch(err => console.log(err))
   },
   create: function(req, res) {
+    console.log(req.body)
     db.Patient.findById(req.body.currentUserID)
       .then(patient => {
         db.PatientProfile.create({...req.body.formData, patientID: patient._id})
           .then(patientProfile => {
             console.log("done")
+            res.json(patientProfile)
           });
       })
       .catch(err => console.log(err));
